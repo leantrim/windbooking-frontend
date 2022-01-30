@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router";
+import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 
@@ -8,9 +8,9 @@ function App() {
     <div>
       <NavBar />
       <h1>Windbooking</h1>
-      <Routes>
-        <Route path="/home" element={Home} />
-      </Routes>
+      <Switch>
+        <Route path="/home" component={Home} />
+      </Switch>
     </div>
   );
 }
