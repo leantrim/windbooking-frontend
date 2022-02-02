@@ -1,10 +1,11 @@
 import React from "react";
+import Windparks from "./components/Windparks";
 
 function App() {
   return (
-    <div>
-      <h1>Windbooking</h1>
-    </div>
+    <>
+      <Windparks />
+    </>
   );
 }
 
