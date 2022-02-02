@@ -4,26 +4,54 @@ const windparks: Windpark[] = [
   {
     id: 1,
     windparkName: "WindOne",
-    address: "Skane",
-    contactinformation: "WindOneContact",
+    address: {
+      street: "Testvägen 1",
+      zipcode: 12345,
+    },
+    contactinformation: {
+      name: "WindOneContact",
+      email: "WindOneContact@gmail.com",
+      mobile: "+46123456789",
+    },
   },
   {
     id: 2,
     windparkName: "WindTwo",
-    address: "Smaland",
-    contactinformation: "WindTwoContact",
+    address: {
+      street: "Testvägen 2",
+      zipcode: 23456,
+    },
+    contactinformation: {
+      name: "WindTwoContact",
+      email: "WindTwoContact@gmail.com",
+      mobile: "+46234567890",
+    },
   },
   {
     id: 3,
     windparkName: "WindThree",
-    address: "Halland",
-    contactinformation: "WindThreeContact",
+    address: {
+      street: "Testvägen 3",
+      zipcode: 34567,
+    },
+    contactinformation: {
+      name: "WindThreeContact",
+      email: "WindThreeContact@gmail.com",
+      mobile: "+46345678901",
+    },
   },
   {
     id: 4,
     windparkName: "WindFour",
-    address: "Vastra Gotaland",
-    contactinformation: "WindFourContact",
+    address: {
+      street: "Testvägen 4",
+      zipcode: 45678,
+    },
+    contactinformation: {
+      name: "WindFourContact",
+      email: "WindFourContact@gmail.com",
+      mobile: "+46456789012",
+    },
   },
 ];
 
