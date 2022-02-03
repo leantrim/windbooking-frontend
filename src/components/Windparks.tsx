@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getWindparks } from "../services/windParks";
 import { Windpark } from "../types/Windpark";
-import { Windparkheader } from "../types/Windparkheader";
 import "../styles/Windparks.css";
 
 function Windparks() {
