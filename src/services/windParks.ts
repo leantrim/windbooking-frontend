@@ -6,7 +6,7 @@ import { Windparkheader } from "../types/Windparkheader";
 const apiEndpoint = `${apiBaseUrl}/windparks`;
 
 export function getWindparks() {
-  return http.get(apiEndpoint);
+  return http.get("http://localhost:5000/api/windparks");
 }
 
 export function addWindparks(windpark: Windpark) {

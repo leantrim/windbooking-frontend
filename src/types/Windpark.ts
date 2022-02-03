@@ -1,12 +1,11 @@
 export interface Windpark {
-  id?: number;
-  windparkName: string;
+  _id?: number;
   address: {
     street: string;
-    zipcode: number;
+    zipcode: string;
   };
   troubleshootingManual: string;
-  contactinformation: {
+  contactInformation: {
     name: string;
     email: string;
     mobile: string;
