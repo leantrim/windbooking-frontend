@@ -5,6 +5,7 @@ export interface Windpark {
     street: string;
     zipcode: number;
   };
+  troubleshootingManual: string;
   contactinformation: {
     name: string;
     email: string;

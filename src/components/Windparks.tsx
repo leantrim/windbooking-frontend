@@ -36,34 +36,37 @@ function Windparks() {
 
   return (
     <>
-      <div className="container">
-        <h1>Windparks</h1>
-      </div>
-      <div className="parks">
-        {windparkheader?.map((windparkheader) => (
-          <span key={windparkheader.headerName} className="name">
-            {windparkheader.headerName}
-          </span>
-        ))}
-      </div>
-      {windparks?.map((windpark) => (
-        <div key={windpark.id} className="row">
-          <span className="name">{windpark.windparkName}</span>
-          <span className="address">{windpark.address.street}</span>
-          <span className="zipcode">{windpark.address.zipcode}</span>
-          <span className="contactName">
-            {windpark.contactinformation.name}
-          </span>
-          <span className="contactEmail">
-            {windpark.contactinformation.email}
-          </span>
-          <span className="contactMobile">
-            {windpark.contactinformation.mobile}
-          </span>
-          <button onClick={handleClick} className="fas fa-trash-alt"></button>
+      <div className="image">
+        <div className="container">
+          <h1>Windparks</h1>
         </div>
-      ))}
-      ;
+        <div className="parks">
+          {windparkheader?.map((windparkheader) => (
+            <span key={windparkheader.headerName} className="name">
+              {windparkheader.headerName}
+            </span>
+          ))}
+        </div>
+        {windparks?.map((windpark) => (
+          <div key={windpark.id} className="row">
+            <span className="name">{windpark.windparkName}</span>
+            <span className="address">{windpark.address.street}</span>
+            <span className="zipcode">{windpark.address.zipcode}</span>
+            <span className="manual">{windpark.troubleshootingManual}</span>
+            <span className="contactName">
+              {windpark.contactinformation.name}
+            </span>
+            <span className="contactEmail">
+              {windpark.contactinformation.email}
+            </span>
+            <span className="contactMobile">
+              {windpark.contactinformation.mobile}
+            </span>
+            <button onClick={handleClick} className="fas fa-trash-alt"></button>
+          </div>
+        ))}
+        ;
+      </div>
     </>
   );
 }

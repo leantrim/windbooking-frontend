@@ -7,6 +7,11 @@ const windparkheaders: Windparkheader[] = [
   {
     headerName: "Address",
   },
+
+  {
+    headerName: "Troubleshooting Manual",
+  },
+
   {
     headerName: "Contactinformation",
   },

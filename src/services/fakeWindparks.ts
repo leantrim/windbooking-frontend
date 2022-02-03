@@ -8,6 +8,7 @@ const windparks: Windpark[] = [
       street: "Testvägen 1",
       zipcode: 12345,
     },
+    troubleshootingManual: "www.google.se",
     contactinformation: {
       name: "WindOneContact",
       email: "WindOneContact@gmail.com",
@@ -21,6 +22,7 @@ const windparks: Windpark[] = [
       street: "Testvägen 2",
       zipcode: 23456,
     },
+    troubleshootingManual: "www.google.se",
     contactinformation: {
       name: "WindTwoContact",
       email: "WindTwoContact@gmail.com",
@@ -34,6 +36,7 @@ const windparks: Windpark[] = [
       street: "Testvägen 3",
       zipcode: 34567,
     },
+    troubleshootingManual: "www.google.se",
     contactinformation: {
       name: "WindThreeContact",
       email: "WindThreeContact@gmail.com",
@@ -47,6 +50,7 @@ const windparks: Windpark[] = [
       street: "Testvägen 4",
       zipcode: 45678,
     },
+    troubleshootingManual: "www.google.se",
     contactinformation: {
       name: "WindFourContact",
       email: "WindFourContact@gmail.com",
