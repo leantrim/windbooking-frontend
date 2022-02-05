@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+.login {
+  width: 382px;
+  overflow: hidden;
+  margin: auto;
+  padding: 80px;
+  border-radius: 3px;
+  background: rgb(115, 175, 115, 0.8);
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #666;
+}
+
+#Uname {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
+  margin: 10px;
+}
+
+#Pass {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
+  margin: 10px;
+}
+
+#Log {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  margin: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #666;
+}
+
+button:hover {
+  opacity: 0.8;
+}
