@@ -1,16 +1,18 @@
-import InputType from "../../types/Input";
-import "../../styles/Input.css";
+import "../../styles/Signup.css";
 
-function Input({ name, label, error, ...restProps }: InputType) {
+function Input({ name, label, style, error, ...restProps }: any) {
   return (
-    <div className="container">
-      <div className="form-box">
-        <label htmlFor={name} className="form-label">
-          {label}
-        </label>
-        <input {...restProps} className="form-control" id={name} name={name} />
-        {error && <div className="alert">{error}</div>}
-      </div>
+    <div>
+      <label htmlFor={name} className={style + "-form-label"}>
+        {label}
+      </label>
+      <input
+        {...restProps}
+        className={style + "-form-control"}
+        id={name}
+        name={name}
+      />
+      {error && <div className={style + "-alert"}>{error}</div>}
     </div>
   );
 }

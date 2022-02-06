@@ -1,12 +1,15 @@
 import { useState } from "react";
 import DropDownInput from "../common/DropdownInput";
 import Input from "../common/Input";
-import { ObjectSchema } from "hapi__joi";
+import "../../styles/Signup.css";
+import { ValidateProperty } from "../../types/Form";
+// import { ObjectSchema } from "hapi__joi";
 
 export default function useForm(
   initalData: any,
   joiSchema: any,
-  doSubmit: any
+  doSubmit: any,
+  style: string // Obs glöm EJ skicka med style komponentens namn
 ) {
   const [data, setData] = useState<any>(initalData);
   const [errors, setErrors] = useState<any>({});
@@ -24,7 +27,7 @@ export default function useForm(
     return errors;
   };
 
-  const validateProperty = ({ name, value }: any) => {
+  const validateProperty = ({ name, value }: ValidateProperty) => {
     const schema = joiSchema.extract(name);
     const { error } = schema.validate(value);
 
@@ -61,6 +64,7 @@ export default function useForm(
       value={data[name]}
       onChange={handleChange}
       error={errors[name]}
+      style={style}
     />
   );
 
@@ -73,11 +77,12 @@ export default function useForm(
       error={errors[name]}
       data={data}
       options={options}
+      style={style}
     />
   );
 
   const renderButton = (input: string) => (
-    <button className="btn btn-primary mt-3" disabled={validate()}>
+    <button className={style + "-button"} disabled={validate()}>
       {input}
     </button>
   );

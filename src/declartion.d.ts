@@ -10,6 +10,7 @@ declare module "react" {
     selected?: any;
     value?: any;
     type?: any;
+    style?: string;
   }
 }
 
@@ -18,5 +19,6 @@ declare module "react" {
     selected?: any;
     value?: any;
     type?: any;
+    style?: any;
   }
 }

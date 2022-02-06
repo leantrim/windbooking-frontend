@@ -1,5 +1,4 @@
 import http from "./httpService";
-import { apiEndpoint } from "../config.json";
 
 const SECOND_URL = "users";
 
@@ -8,9 +7,12 @@ function register(user: any) {
     email: user.email,
     name: user.name,
     password: user.password,
+    userType: user.userType,
   });
 }
 
-export default {
+const exportObject = {
   register,
 };
+
+export default exportObject;

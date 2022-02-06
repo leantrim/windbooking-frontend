@@ -40,10 +40,12 @@ function getJwt() {
   return key;
 }
 
-export default {
+const exportedObject = {
   login,
   logout,
   loginWithJwt,
   getCurrentUser,
   getJwt,
 };
+
+export default exportedObject;

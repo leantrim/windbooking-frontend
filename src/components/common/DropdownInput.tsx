@@ -1,10 +1,5 @@
 import DropDownInputType from "../../types/DropdownInput";
-
-const getActiveCategory = (id: string, categoryId: string) => {
-  let classes: string = "";
-  classes += id === categoryId ? "active" : "";
-  return classes;
-};
+import "../../styles/Signup.css";
 
 function DropDownInput({
   name,
@@ -13,32 +8,27 @@ function DropDownInput({
   data,
   options,
   onChange,
+  style,
   ...restProps
 }: DropDownInputType) {
   return (
     <div>
-      {label}
+      <label htmlFor={name} className={style + "-form-label"}>
+        {label}
+      </label>
       <select
         name={name}
         onChange={onChange}
-        className="form-select"
-        selected={
-          data.categoryId && getActiveCategory(options._id, data.categoryId)
-        }
+        selected={options.selected}
+        className={style + "-form-select"}
       >
         {options.map((opt: any) => (
-          <option
-            value={opt._id}
-            selected={
-              data.categoryId && getActiveCategory(opt._id, data.categoryId)
-            }
-            key={opt._id}
-          >
+          <option value={opt.name} key={opt.name}>
             {opt.name}
           </option>
         ))}
       </select>
-      {error && <div className="alert alert-danger">{error}</div>}
+      {error && <div className={style + "-alert"}>{error}</div>}
     </div>
   );
 }
