@@ -32,7 +32,7 @@ export default function Signup() {
     try {
       const { headers } = await user.register(data);
       auth.loginWithJwt(headers["x-auth-token"]);
-      window.location.href = "/";
+      window.location.href = "/"; // Fungerar ej
     } catch (error: any) {
       if (error.response && error.response.status === 400) {
         const errors = error.response.data;
