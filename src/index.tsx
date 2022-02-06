@@ -6,7 +6,6 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 ReactDOM.render(
   <BrowserRouter>
-    {" "}
     <React.StrictMode>
       <App />
     </React.StrictMode>
