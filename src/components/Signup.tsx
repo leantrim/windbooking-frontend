@@ -3,7 +3,7 @@ import Joi from "joi";
 import user from "../services/userService";
 import auth from "../services/authService";
 import useForm from "./common/Form";
-import { DoSubmit } from "../types/Signup";
+import { SignupFormData } from "../types/Signup";
 import { UserType, RegisterType } from "../types/RegisterFormType";
 import "../styles/Signup.css";
 
@@ -28,7 +28,7 @@ export default function Signup() {
       .label(RegisterType.userType),
   });
 
-  const doSubmit = async (data: DoSubmit) => {
+  const doSubmit = async (data: SignupFormData) => {
     try {
       const { headers } = await user.register(data);
       auth.loginWithJwt(headers["x-auth-token"]);
