@@ -11,8 +11,13 @@ function register(user: any) {
   });
 }
 
+export function getMe() {
+  return http.get(`http://localhost:5000/api/users/me`);
+}
+
 const exportObject = {
   register,
+  getMe,
 };
 
 export default exportObject;
