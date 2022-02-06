@@ -1,11 +1,13 @@
-import React from "react";
+import { Route, Switch } from "react-router-dom";
+import Signup from "./components/Signup";
+import "./styles/App.css";
 
-function App() {
+export default function App() {
   return (
     <div>
-      <h1>Windbooking</h1>
+      <Switch>
+        <Route path="/Signup" component={Signup} />
+      </Switch>
     </div>
   );
 }
-
-export default App;
