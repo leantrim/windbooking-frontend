@@ -1,9 +1,9 @@
-export interface DoSubmit {
+export interface SignupFormData {
   email: string;
   password: string;
   error: string;
-  name: any;
-  userType: any;
+  name: string;
+  userType: string;
 }
 
 export interface UseForm {

@@ -6,7 +6,7 @@ export enum UserType {
 
 export enum RegisterType {
   classname = "register",
-  title = "Registrera Konto",
+  title = "Registrera konto",
   emailSubject = "Email",
   passwordSubject = "Password",
   nameSubject = "Namn",
