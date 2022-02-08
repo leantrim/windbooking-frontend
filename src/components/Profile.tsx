@@ -17,7 +17,7 @@ function Profile(user: any) {
     fetchMe();
   }, []);
   return <TechProfile />;
-  // return <div>{user.user.name}</div>;
+  // if Planner return <PlanProfile/>
 }
 
 export default Profile;
