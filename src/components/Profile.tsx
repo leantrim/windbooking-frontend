@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { getMe } from "../services/userService";
+import TechProfile from "./TechProfile";
 
 function Profile(user: any) {
-  const [me, setMe] = useState({});
+  const [me, setMe] = useState<any>({});
 
   useEffect(() => {
     async function fetchMe() {
-      const { data: me } = await getMe();
-      setMe(me);
+      try {
+        const { data: me } = await getMe();
+        setMe(me);
+      } catch (error) {
+        console.log(error);
+      }
     }
-    console.log(user);
     fetchMe();
   }, []);
-  return <div>hej</div>;
+  return <TechProfile />;
   // return <div>{user.user.name}</div>;
 }
 
