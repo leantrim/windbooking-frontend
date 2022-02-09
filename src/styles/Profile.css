@@ -1,90 +1,23 @@
 .profile-container {
-  display: inline-grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.profile-form-container {
-  grid-column: 3;
-  align-items: center;
+  display: grid;
   justify-content: center;
-  box-shadow: rgba(34, 36, 37, 0.2) 0px 8px 24px;
-  border-radius: 8px;
-  padding-bottom: 20px;
-  background-color: #82af3e;
-  text-align: center;
-  font-weight: 900;
+  background-color: rgb(181, 225, 150);
 }
 
-.profile-signup-title {
-  font-size: 18px;
-  border-bottom: 1px solid rgb(65, 143, 45);
+.profile-top-box {
+  width: 50vw;
+  height: 15vh;
+  background-color: rgb(133, 188, 94);
+  margin: 2vh;
+  border-radius: 3px;
 }
-
-.profile-errorresponse {
-  text-align: center;
-  background-color: rgb(157 7 7 / 87%);
-  font-weight: bold;
-  animation: blinker 3s linear infinite;
+.profile-middle-box {
+  width: 50vw;
+  height: 55vh;
+  background-color: rgb(133, 188, 94);
+  margin: 2vh;
+  border-radius: 3px;
 }
-
-.profile-button {
-  background-color: green;
-  color: black;
-  border-radius: 8px;
-  cursor: pointer;
-  transform: translate(0.3);
-  border: none;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 5px;
-  width: 72%;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.profile-button:disabled {
-  opacity: 0.5;
-  cursor: default;
-  border: none;
-}
-
-.profile-form-label {
-  display: inline-block;
-  min-width: 360px;
-}
-
-.profile-form-control {
-  border-radius: 8px;
-  box-shadow: none;
-  border: 1px solid #777;
-  text-align: center;
-  font-size: 14px;
-  margin: 10px;
-  padding: 5px;
-  width: 70%;
-}
-
-.profile-form-select {
-  border-radius: 8px;
-  box-shadow: none;
-  border: 1px solid #777;
-  text-align: center;
-  font-size: 18px;
-  margin: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 73%;
-  cursor: pointer;
-}
-
-.profile-alert {
-  text-align: center;
-  background-color: rgb(157 7 7 / 87%);
-  font-weight: bold;
-  font-size: 10px;
-  border-radius: 8px;
-  display: inline-block;
-  padding: 5px;
-  margin-bottom: 10px;
-  animation: blinker 3s linear infinite;
+.profile-header {
+  margin: 2vh;
 }
