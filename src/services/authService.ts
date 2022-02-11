@@ -10,7 +10,7 @@ async function login(user: any) {
   const { data: jwt } = await http.post(
     `http://localhost:5000/api/${SECOND_URL}`,
     {
-      email: user.username,
+      email: user.email,
       password: user.password,
     }
   );

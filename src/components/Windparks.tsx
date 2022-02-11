@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getWindparks } from "../services/windParks";
 import { Windpark } from "../types/Windpark";
 import "../styles/Windparks.css";
