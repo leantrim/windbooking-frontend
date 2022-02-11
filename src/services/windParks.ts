@@ -9,6 +9,13 @@ export function getWindparks() {
   return http.get("http://localhost:5000/api/windparks");
 }
 
+// export function deleteFood(id) {
+//   return http.delete(apiEndpoint + "/" + id);
+// }
+export function deleteWindpark(id: Windpark) {
+  return http.delete(apiEndpoint + id);
+}
+
 export function addWindparks(windpark: Windpark) {
   return http.post(apiEndpoint, windpark);
 }

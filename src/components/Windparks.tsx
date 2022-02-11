@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getWindparks } from "../services/windParks";
+import { deleteWindpark, getWindparks } from "../services/windParks";
 import { Windpark } from "../types/Windpark";
 import "../styles/Windparks.css";
 
@@ -14,9 +14,14 @@ function Windparks() {
     fetchwindparks();
   }, []);
 
-  const handleClick = () => {
-    console.log("clicked");
+  const handleDelete = (windpark: Windpark) => {
+    const deletedWindpark = windparks?.filter((w) => w._id !== windpark._id);
+    setWindparks(deletedWindpark);
+
+    deleteWindpark(windpark);
   };
+
+  console.log(windparks);
 
   return (
     <>
@@ -43,7 +48,10 @@ function Windparks() {
             <span className="contactMobile">
               {windpark.contactInformation.mobile}
             </span>
-            <button onClick={handleClick} className="fas fa-trash-alt"></button>
+            <button
+              onClick={() => handleDelete(windpark)}
+              className="fas fa-trash-alt"
+            ></button>
           </div>
         ))}
         ;
