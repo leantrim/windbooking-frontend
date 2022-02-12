@@ -9,7 +9,6 @@ function Windparks() {
   useEffect(() => {
     async function fetchwindparks() {
       const { data: windparks } = await getWindparks();
-      console.log(windparks);
       setWindparks(windparks);
     }
     fetchwindparks();

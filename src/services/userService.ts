@@ -11,13 +11,8 @@ function register(user: any) {
   });
 }
 
-export async function getMe() {
-  return await http.get(`http://localhost:5000/api/users/me`);
-}
-
 const exportObject = {
   register,
-  getMe,
 };
 
 export default exportObject;

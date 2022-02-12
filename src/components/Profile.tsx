@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getMe } from "../services/userService";
+import auth from "../services/authService";
 import TechProfile from "./TechProfile";
 
 function Profile(user: any) {
@@ -8,7 +8,7 @@ function Profile(user: any) {
   useEffect(() => {
     async function fetchMe() {
       try {
-        const { data: me } = await getMe();
+        const { data: me } = await auth.getMe();
         setMe(me);
       } catch (error) {
         console.log(error);
@@ -16,8 +16,11 @@ function Profile(user: any) {
     }
     fetchMe();
   }, []);
-  return <TechProfile />;
-  // if Planner return <PlanProfile/>
+
+  //Ska ändras
+  if (me.userType === "Planner") {
+    return <TechProfile technician={me} />;
+  } else return <div></div>;
 }
 
 export default Profile;
