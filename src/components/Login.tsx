@@ -28,10 +28,10 @@ export default function Login() {
   const doSubmit = async (data: LoginFormData) => {
     try {
       await auth.login(data);
-      window.location.href = state ? state.from.pathname : "/";
+      window.location.href = state ? state.from.pathname : "/windfarm";
     } catch (error: any) {
       if (error.response && error.response.status === 400) {
-        const errors = { email: error.response.data };
+        const errors = error.response.data;
         setErrors(errors);
       }
     }
