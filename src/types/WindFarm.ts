@@ -1,4 +1,4 @@
-export interface Windpark {
+export interface WindFarm {
   _id?: number;
   address: {
     street: string;
