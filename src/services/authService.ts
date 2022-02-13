@@ -2,7 +2,7 @@ import jwtDecode from "jwt-decode";
 import http from "./httpService";
 
 const SECOND_URL = "auth";
-const tokenKey = "token";
+const tokenKey = "x-auth-token";
 
 http.setAuthHeader(getJwt());
 
