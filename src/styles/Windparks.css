@@ -96,3 +96,21 @@
 .fa-trash-alt:hover {
   transform: scale(1.1);
 }
+
+.windfarm-button {
+  background-color: #6aa84f;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 24px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.windfarm-button:hover {
+  transform: scale(1.05);
+}
+.new-windfarm {
+  text-decoration: none;
+  color: white;
+}

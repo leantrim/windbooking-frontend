@@ -28,10 +28,12 @@ function Windparks() {
     <>
       <div className="image">
         <div className="container">
-          <h1>Windparks</h1>
-          <NavLink to="/windparks/new" className="new-windpark">
-            Add Windpark
-          </NavLink>
+          <h1>Wind Farms</h1>
+          <button className="windfarm-button">
+            <NavLink to="/windfarm/new" className="new-windfarm">
+              Add Wind Farm
+            </NavLink>
+          </button>
         </div>
         <div className="parks">
           <span className="name">Address</span>

@@ -13,7 +13,7 @@ export default function App() {
       <NavBar />
       {/* <h1>Windbooking</h1> */}
       <Switch>
-        <Route path="/windparks/new" component={newWindfarm} />
+        <Route path="/windfarm/new" component={newWindfarm} />
         <Route path="/home" component={Home} />
         <Route path="/windparks" component={Windparks} />
         <Route path="/login" component={Login} />
