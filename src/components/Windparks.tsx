@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { deleteWindpark, getWindparks } from "../services/windParks";
 import { Windpark } from "../types/Windpark";
 import "../styles/Windparks.css";
+import { NavLink } from "react-router-dom";
 
 function Windparks() {
   const [windparks, setWindparks] = useState<Windpark[]>();
@@ -14,11 +15,11 @@ function Windparks() {
     fetchwindparks();
   }, []);
 
-  const handleDelete = (windpark: Windpark) => {
+  const handleDelete = async (windpark: any) => {
     const deletedWindpark = windparks?.filter((w) => w._id !== windpark._id);
     setWindparks(deletedWindpark);
 
-    deleteWindpark(windpark);
+    await deleteWindpark(windpark._id);
   };
 
   console.log(windparks);
@@ -28,6 +29,9 @@ function Windparks() {
       <div className="image">
         <div className="container">
           <h1>Windparks</h1>
+          <NavLink to="/windparks/new" className="new-windpark">
+            Add Windpark
+          </NavLink>
         </div>
         <div className="parks">
           <span className="name">Address</span>
