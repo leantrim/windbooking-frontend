@@ -4,7 +4,7 @@
   background-blend-mode: overlay;
   background-size: cover;
 }
-.parks {
+.farms {
   margin: 16px auto;
   border: 1px solid black;
   border-radius: 15px;
@@ -14,7 +14,7 @@
   place-items: left;
 }
 
-.parks .name {
+.farms .name {
   margin: 20px;
   color: #666;
   font-weight: bold;
