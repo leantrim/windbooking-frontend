@@ -1,5 +1,6 @@
 import "../../styles/Signup.css";
 import "../../styles/Profile.css";
+import "../../styles/Login.css";
 
 function Input({ name, label, style, error, ...restProps }: any) {
   return (

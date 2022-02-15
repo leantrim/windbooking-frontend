@@ -3,14 +3,15 @@ import DropDownInput from "../common/DropdownInput";
 import Input from "../common/Input";
 import "../../styles/Signup.css";
 import "../../styles/Profile.css";
+import "../../styles/Login.css";
 import { ValidateProperty } from "../../types/Form";
-// import { ObjectSchema } from "hapi__joi";
+import { ObjectSchema } from "joi";
 
 export default function useForm(
   initalData: any,
-  joiSchema: any,
-  doSubmit: any,
-  style: string // Obs glöm EJ skicka med style komponentens namn
+  joiSchema: ObjectSchema,
+  doSubmit: (formData: any) => Promise<void>,
+  style: string
 ) {
   const [data, setData] = useState<any>(initalData);
   const [errors, setErrors] = useState<any>({});
@@ -69,7 +70,7 @@ export default function useForm(
     />
   );
 
-  const renderDropDown = (name: string, label: string, options: any) => (
+  const renderDropDown = (name: string, label: string, options: any[]) => (
     <DropDownInput
       name={name}
       label={label}
