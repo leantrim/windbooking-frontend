@@ -1,7 +1,7 @@
 import React from "react";
-import useForm from "./common/Form";
+import useForm from "../common/Form";
 import Joi from "joi";
-import { RegisterType } from "../types/RegisterFormType";
+import { RegisterType } from "../../types/RegisterFormType";
 
 function EditTechProfile() {
   const data = {};

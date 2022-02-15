@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import auth from "../services/authService";
+import auth from "../../services/authService";
 import TechProfile from "./TechProfile";
+import PlannerProfile from "./TechProfile";
 
 function Profile(user: any) {
   const [me, setMe] = useState<any>({});
@@ -18,9 +19,13 @@ function Profile(user: any) {
   }, []);
 
   //Ska ändras
-  if (me.userType === "Planner") {
+  if (me.userType === "Technician") {
     return <TechProfile technician={me} />;
-  } else return <div></div>;
+  } else if (me.userType === "Planner") {
+    return <PlannerProfile planner={me} />;
+  } else {
+    return <div></div>;
+  }
 }
 
 export default Profile;

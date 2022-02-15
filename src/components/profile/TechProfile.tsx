@@ -1,6 +1,5 @@
 import React from "react";
-import "../styles/Profile.css";
-import { Technician } from "../types/Technician";
+import "../../styles/Profile.css";
 
 function TechProfile(props: any) {
   return (

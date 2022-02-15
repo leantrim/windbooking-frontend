@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Windparks from "./components/Windparks";
 import Login from "./components/Login";
-import Profile from "./components/Profile";
+import Profile from "./components/profile/Profile";
 import { useEffect, useState } from "react";
 import auth from "./services/authService";
 
