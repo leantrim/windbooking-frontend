@@ -13,11 +13,11 @@ function EditTechProfile() {
     name: Joi.string().min(3).required().label(RegisterType.nameSubject),
   });
 
-  const doSubmit = () => {
+  const className = "profile";
+
+  const doSubmit: any = () => {
     console.log("submited");
   };
-
-  const className = "profile";
 
   const { renderInput, renderButton, handleSubmit } = useForm(
     data,

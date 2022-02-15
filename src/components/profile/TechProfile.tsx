@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Profile.css";
 
 function TechProfile(props: any) {
+  useEffect(() => {
+    console.log(props);
+  }, []);
   return (
     <div className="profile-container">
       <h1 className="profile-header">Your Profile</h1>
