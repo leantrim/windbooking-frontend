@@ -1,6 +1,6 @@
 export enum NewWindfarmType {
   classname = "windfarm",
-  title = "Add wind farm",
+  title = "Add Wind Farm",
   emailSubject = "Email",
   nameSubject = "Name",
   mobileSubject = "Mobile",

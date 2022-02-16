@@ -3,9 +3,9 @@ import Signup from "./components/Signup";
 import "./styles/App.css";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import Windparks from "./components/Windparks";
+import Windfarms from "./components/Windparks";
 import Login from "./components/Login";
-import newWindfarm from "./components/NewWindfarm";
+import NewWindfarm from "./components/NewWindfarm";
 
 export default function App() {
   return (
@@ -13,9 +13,9 @@ export default function App() {
       <NavBar />
       {/* <h1>Windbooking</h1> */}
       <Switch>
-        <Route path="/windfarm/new" component={newWindfarm} />
+        <Route path="/windfarm/:id" component={NewWindfarm} />
         <Route path="/home" component={Home} />
-        <Route path="/windparks" component={Windparks} />
+        <Route path="/windfarms" component={Windfarms} />
         <Route path="/login" component={Login} />
         <Route path="/Signup" component={Signup} />
       </Switch>

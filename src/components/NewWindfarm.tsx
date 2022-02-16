@@ -1,19 +1,20 @@
 import { useState } from "react";
 import Joi from "joi";
 import useForm from "./common/Form";
-import { NewWindfarmData } from "../types/NewWindfarmData";
 import { NewWindfarmType } from "../types/RegisterFormType";
 import "../styles/NewWindfarm.css";
-import { useLocation } from "react-router";
+import { useHistory } from "react-router";
+import { saveWindfarm } from "../services/windParks";
+import { Windpark } from "../types/Windpark";
 
 interface stateType {
   from: { pathname: string };
 }
 
-export default function newWindfarm() {
+export default function NewWindfarm() {
   const data = { name: "", street: "", zipcode: "", email: "", mobile: "" };
   const [errors, setErrots] = useState<any>();
-  const { state } = useLocation<stateType>();
+  const history = useHistory<stateType>();
 
   const className = NewWindfarmType.classname;
 
@@ -33,7 +34,10 @@ export default function newWindfarm() {
       .label(NewWindfarmType.mobileSubject),
   });
 
-  const doSubmit = async (data: NewWindfarmData) => {};
+  const doSubmit = async (data: Windpark) => {
+    await saveWindfarm(data);
+    history.replace("/windfarms");
+  };
 
   const { renderButton, renderInput, handleSubmit } = useForm(
     data,
