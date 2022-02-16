@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Joi from "joi";
 import useForm from "./common/Form";
-import { NewWindfarmType } from "../types/RegisterFormType";
+import { NewWindfarmType } from "../types/NewWindfarmType";
 import "../styles/NewWindfarm.css";
 import { useHistory } from "react-router";
 import { saveWindfarm } from "../services/windParks";
-import { Windpark } from "../types/Windpark";
+import "../styles/NewWindfarm.css";
+import { NewWindfarmData } from "../types/NewWindfarmData";
 
 interface stateType {
   from: { pathname: string };
@@ -34,7 +35,7 @@ export default function NewWindfarm() {
       .label(NewWindfarmType.mobileSubject),
   });
 
-  const doSubmit = async (data: Windpark) => {
+  const doSubmit = async (data: NewWindfarmData) => {
     await saveWindfarm(data);
     history.replace("/windfarms");
   };

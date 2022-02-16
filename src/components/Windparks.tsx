@@ -29,7 +29,7 @@ function Windparks() {
       <div className="image">
         <div className="container">
           <h1>Wind Farms</h1>
-          <button className="windfarm-button">
+          <button className="windfarm-add-button">
             <NavLink to="/windfarm/new" className="new-windfarm">
               Add Wind Farm
             </NavLink>

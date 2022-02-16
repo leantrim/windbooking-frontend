@@ -4,10 +4,10 @@ import { Windpark } from "../types/Windpark";
 import { Windparkheader } from "../types/Windparkheader";
 import { NewWindfarmData } from "../types/NewWindfarmData";
 
-const apiEndpoint = `${apiBaseUrl}/windparks`;
+const apiEndpoint = `${apiBaseUrl}/windfarms`;
 
 export function getWindparks() {
-  return http.get("http://localhost:5000/api/windparks");
+  return http.get("http://localhost:5000/api/windfarms");
 }
 
 export function deleteWindpark(_id: Windpark) {
@@ -26,7 +26,7 @@ export function addWindparkheaders(windparkheader: Windparkheader) {
   return http.post(apiEndpoint, windparkheader);
 }
 
-export function saveWindfarm(windpark: Windpark) {
+export function saveWindfarm(windpark: NewWindfarmData) {
   if (windpark._id) {
     const body = { ...windpark };
     delete body._id;

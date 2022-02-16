@@ -14,14 +14,3 @@ export enum RegisterType {
   typeQuestion = "Välj profiltyp",
   button = "REGISTER",
 }
-
-export enum NewWindfarmType {
-  classname = "windfarm",
-  title = "Lägg till wind farm",
-  emailSubject = "Email",
-  nameSubject = "Name",
-  mobileSubject = "Mobile",
-  streetSubject = "Street",
-  zipcodeSubject = "Zipcode",
-  button = "LÄGG TILL",
-}

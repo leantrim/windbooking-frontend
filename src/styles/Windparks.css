@@ -97,7 +97,7 @@
   transform: scale(1.1);
 }
 
-.windfarm-button {
+.windfarm-add-button {
   background-color: #6aa84f;
   border: none;
   border-radius: 15px;
@@ -107,7 +107,7 @@
   font-size: 16px;
 }
 
-.windfarm-button:hover {
+.windfarm-add-button:hover {
   transform: scale(1.05);
 }
 .new-windfarm {
