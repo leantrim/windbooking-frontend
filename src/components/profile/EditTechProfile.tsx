@@ -3,7 +3,7 @@ import useForm from "../common/Form";
 import Joi from "joi";
 import { RegisterType } from "../../types/RegisterFormType";
 
-function EditTechProfile() {
+function EditTechProfile(props: any) {
   const data = {};
 
   const schema = Joi.object({
@@ -17,6 +17,7 @@ function EditTechProfile() {
 
   const doSubmit: any = () => {
     console.log("submited");
+    props.onSaveClick();
   };
 
   const { renderInput, renderButton, handleSubmit } = useForm(
