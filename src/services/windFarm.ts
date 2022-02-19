@@ -3,10 +3,10 @@ import apiBaseUrl from "../config.json";
 import { WindFarm } from "../types/WindFarm";
 import { WindFarmHeader } from "../types/WindFarmHeader";
 
-const apiEndpoint = `${apiBaseUrl}/windfarm`;
+const apiEndpoint = `${apiBaseUrl}/windparks`;
 
 export function getWindFarms() {
-  return http.get("http://localhost:5000/api/windfarm");
+  return http.get("http://localhost:5000/api/windparks");
 }
 
 export function addWindFarm(windfarm: WindFarm) {

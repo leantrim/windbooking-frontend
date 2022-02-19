@@ -4,6 +4,7 @@ import axios from "axios";
 //   const expectedError = error.status >= 400 && error.status < 500;
 
 //   if (!expectedError) {
+//     return;
 //   }
 
 //   return Promise.reject(error);

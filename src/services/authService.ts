@@ -2,9 +2,13 @@ import jwtDecode from "jwt-decode";
 import http from "./httpService";
 
 const SECOND_URL = "auth";
-const tokenKey = "token";
+const tokenKey = "x-auth-token";
 
 http.setAuthHeader(getJwt());
+
+function getMe() {
+  return http.get(`http://localhost:5000/api/users/me`);
+}
 
 async function login(user: any) {
   const { data: jwt } = await http.post(
@@ -46,6 +50,7 @@ const exportedObject = {
   loginWithJwt,
   getCurrentUser,
   getJwt,
+  getMe,
 };
 
 export default exportedObject;
