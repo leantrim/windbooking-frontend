@@ -1,0 +1,62 @@
+.profile-container {
+  display: grid;
+  justify-content: center;
+  background-color: rgb(181, 225, 150);
+  height: 100vh;
+}
+
+.profile-top-box {
+  width: 50vw;
+  height: 15vh;
+  background-color: rgb(133, 188, 94);
+  margin: 2vh;
+  border-radius: 3px;
+  box-shadow: rgba(34, 36, 37, 0.2) 0px 8px 24px;
+  display: grid;
+  justify-content: space-between;
+}
+.profile-top-box-planner {
+  width: 50vw;
+  height: 40vh;
+  background-color: rgb(133, 188, 94);
+  margin: 2vh;
+  border-radius: 300px;
+  box-shadow: rgba(34, 36, 37, 0.2) 0px 8px 24px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.profile-top-box .name {
+  grid-column: 1;
+  grid-row: 1;
+  margin-left: 2vw;
+  font-weight: bold;
+}
+.profile-top-box .userType {
+  grid-column: 2;
+  grid-row: 1;
+  margin-right: 2vw;
+  font-weight: bold;
+}
+.profile-top-box .email {
+  grid-column: 1;
+  grid-row: 2;
+  margin-left: 2vw;
+}
+
+.profile-middle-box {
+  width: 50vw;
+  height: 55vh;
+  background-color: rgb(133, 188, 94);
+  margin: 2vh;
+  border-radius: 3px;
+  box-shadow: rgba(34, 36, 37, 0.2) 0px 8px 24px;
+}
+.profile-header {
+  margin: 2vh;
+}
+.profile-header-planner {
+  margin: 2vh;
+  align-self: center;
+  justify-self: center;
+}
