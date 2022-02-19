@@ -3,10 +3,17 @@ import auth from "../../services/authService";
 import TechProfile from "./TechProfile";
 import PlannerProfile from "./PlannerProfile";
 import EditTechProfile from "./EditTechProfile";
+import { Technician } from "../../types/Technician";
+import { Planner } from "../../types/Planner";
 
-function Profile(user: any) {
-  const [me, setMe] = useState<any>({});
-  const [isEdit, setEdit] = useState<any>(false);
+function Profile() {
+  const [me, setMe] = useState<Technician | Planner>({
+    id: "",
+    email: "",
+    name: "",
+    userType: "",
+  });
+  const [isEdit, setEdit] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchMe() {

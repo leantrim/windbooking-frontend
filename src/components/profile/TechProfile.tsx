@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 import "../../styles/Profile.css";
+import { Technician } from "../../types/Technician";
 
-function TechProfile(props: any) {
+interface props {
+  technician: Technician;
+  onEditClick: () => void;
+}
+
+function TechProfile(props: props) {
   useEffect(() => {
     console.log(props);
   }, []);

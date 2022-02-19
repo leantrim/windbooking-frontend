@@ -25,10 +25,7 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/windfarm" component={WindFarm} />
         <Route path="/login" component={Login} />
-        <Route
-          path="/profile"
-          render={(props) => <Profile user={user} {...props} />}
-        />
+        <Route path="/profile" component={Profile} />
         <Route path="/logout" component={Logout} />
         <Route path="/Signup" component={Signup} />
       </Switch>

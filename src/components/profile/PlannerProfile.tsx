@@ -1,7 +1,12 @@
 import React from "react";
 import "../../styles/Profile.css";
+import { Planner } from "../../types/Planner";
 
-function PlannerProfile(props: any) {
+interface props {
+  planner: Planner;
+}
+
+function PlannerProfile(props: props) {
   return (
     <div className="profile-container">
       <h1 className="profile-header-planner">Your Profile</h1>

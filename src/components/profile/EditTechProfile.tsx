@@ -2,8 +2,14 @@ import React from "react";
 import useForm from "../common/Form";
 import Joi from "joi";
 import { RegisterType } from "../../types/RegisterFormType";
+import { Technician } from "../../types/Technician";
 
-function EditTechProfile(props: any) {
+interface props {
+  technician: Technician;
+  onSaveClick: () => void;
+}
+
+function EditTechProfile(props: props) {
   const data = {};
 
   const schema = Joi.object({
