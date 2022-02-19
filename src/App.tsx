@@ -9,6 +9,7 @@ import Profile from "./components/profile/Profile";
 import { useEffect, useState } from "react";
 import auth from "./services/authService";
 import Logout from "./components/Logout";
+import TechTable from "./components/TechTable";
 
 function App() {
   const [user, setUser] = useState<any>(null);
@@ -28,6 +29,7 @@ function App() {
         <Route path="/profile" component={Profile} />
         <Route path="/logout" component={Logout} />
         <Route path="/Signup" component={Signup} />
+        <Route path="/TechTable" component={TechTable} />
       </Switch>
     </div>
   );
