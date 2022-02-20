@@ -26,7 +26,7 @@ const NavBar = () => {
             <NavLink to="/signup">Signup</NavLink>
           </li>
           <li>
-            <NavLink to="/techtable">Techtabel</NavLink>
+            <NavLink to="/techtable">Techtable</NavLink>
           </li>
         </ul>
       </div>

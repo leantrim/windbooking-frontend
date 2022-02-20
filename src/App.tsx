@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import auth from "./services/authService";
 import Logout from "./components/Logout";
 import TechTable from "./components/TechTable";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [user, setUser] = useState<any>(null);
