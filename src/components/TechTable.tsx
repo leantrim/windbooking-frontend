@@ -3,20 +3,23 @@ import { getTech } from "../services/techService";
 import { Technician } from "../types/Technician";
 
 function TechTable() {
-  const [technician, setTechnician] = useState<[Technician]>([{}]);
+  const [technicians, setTechnicians] = useState<[Technician]>();
+
   useEffect(() => {
-    const fetchTech = async () => {
-      try {
-        const data: any = await getTech();
-        setTechnician(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+    async function fetchTech() {
+      const { data: technicians } = await getTech();
+      setTechnicians(technicians);
+    }
     fetchTech();
   }, []);
 
-  return <div>hej</div>;
+  return (
+    <div>
+      {technicians?.map((technician) => (
+        <span>{technician.userID}</span>
+      ))}
+    </div>
+  );
 }
 
 export default TechTable;
