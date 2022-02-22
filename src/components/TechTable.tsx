@@ -1,78 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { getTech } from "../services/techService";
-import { Technician } from "../types/Technician";
+import React, { useState } from "react";
+import fakeTech from "../services/fakeTech";
+import TabelBody from "./common/TableBody";
+import TabelHeader from "./common/TableHeader";
+import { Column } from "../types/Table";
 
-import { Table } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/js/src/collapse.js";
+function FoodsTable() {
+  const [columns, setColumns] = useState<Column[]>([
+    { path: "available", label: "Available" },
+    { path: "electricalCompetence", label: "Electrical competence" },
+    { path: "workPermitNorway", label: "Work permit Norway" },
+    { path: "driverLicense", label: "Driver license" },
+    { path: "specificTools", label: "Specific tools" },
+    { path: "vanWithWinterTire", label: "Van with winter tire" },
+    { path: "location", label: "Location" },
+  ]);
 
-function TechTable() {
-  const [technicians, setTechnicians] = useState<[Technician]>();
-
-  useEffect(() => {
-    async function fetchTech() {
-      const { data: technicians } = await getTech();
-      setTechnicians(technicians);
-    }
-    fetchTech();
-  }, []);
+  const handleSort = (path: String) => {
+    console.log("click", path);
+  };
 
   return (
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <td>Name</td>
-          <td>Tools</td>
-          <td>Work Permit</td>
-          <td>Driver License</td>
-          <td>Transport vehicle</td>
-          <td>certifications</td>
-          <td>achievements</td>
-        </tr>
-      </thead>
-      <tbody>
-        {technicians?.map((technician) => (
-          <>
-            <tr
-              data-toggle="collapse"
-              data-target={`.multi-collapse1${technician.userID}`}
-              aria-controls={technician.userID}
-            >
-              <td>Albin</td>
-              <td>
-                {technician.tools?.map((tool) => {
-                  return tool + ", ";
-                })}
-              </td>
-              <td>{technician.workPermit ? "Yes" : "No"}</td>
-              <td>{technician.driverLicense ? "Yes" : "No"}</td>
-              <td>
-                {technician.transportVehicle ? "Yes " : "No "}
-                With Winter Tyres?
-                {technician.transportVehicle?.winterTyres ? " Yes " : " No "}
-              </td>
-              <td>
-                {technician.certifications?.map((certification) => {
-                  return certification + ", ";
-                })}
-              </td>
-              <td>
-                {technician.achievements?.map((achievement) => {
-                  return achievement + ", ";
-                })}
-              </td>
-            </tr>
-            <tr
-              className={`collapse multi-collapse${technician.userID}`}
-              id={technician.userID}
-            >
-              <td>{technician.userID} </td>
-            </tr>
-          </>
-        ))}
-      </tbody>
-    </Table>
+    <table className={"table table-hover"}>
+      <TabelHeader columns={columns} onSort={handleSort} />
+      <TabelBody data={fakeTech} columns={columns} />
+    </table>
   );
 }
 
-export default TechTable;
+export default FoodsTable;
