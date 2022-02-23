@@ -45,7 +45,7 @@ export default function Login() {
     className
   );
 
-  // if (auth.getCurrentUser()) return <Redirect to="/home" />;
+  if (auth.getCurrentUser()) return <Redirect to="/home" />;
 
   return (
     <div className={className + "-container"}>

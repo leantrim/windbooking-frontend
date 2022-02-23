@@ -14,16 +14,21 @@ const NavBar = ({ user }: any) => {
             <NavLink to="/windfarm">Windfarms</NavLink>
           </li>
           {!user && (
-            <li>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="/signup">Signup</NavLink>
-            </li>
+            <>
+              <li>
+                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/signup">Signup</NavLink>
+              </li>
+            </>
           )}
           {user && (
-            <li>
-              <NavLink to="/profile">{user.name}</NavLink>
-              <NavLink to="/logout">Logout</NavLink>
-            </li>
+            <>
+              <li>
+                <NavLink to="/profile">{user.name}</NavLink>
+
+                <NavLink to="/logout">Logout</NavLink>
+              </li>
+            </>
           )}
         </ul>
       </div>
