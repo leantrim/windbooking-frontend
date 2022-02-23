@@ -95,5 +95,6 @@ export default function useForm(
     renderInput,
     handleSubmit,
     setData,
+    data,
   };
 }
