@@ -1,15 +1,14 @@
-export interface NewWindfarmData {
-  _id?: number;
+export interface CreateWindfarmData {
   address: {
     street: string;
     zipcode: string;
   };
-  troubleshootingManual: string;
   contactInformation: {
     name: string;
     email: string;
     mobile: string;
   };
+  troubleshootingManual: string;
 }
 
 export interface UseForm {

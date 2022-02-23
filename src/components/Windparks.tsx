@@ -15,7 +15,7 @@ function Windparks() {
     fetchwindparks();
   }, []);
 
-  const handleDelete = async (windpark: any) => {
+  const handleDelete = async (windpark: Windpark) => {
     const deletedWindpark = windparks?.filter((w) => w._id !== windpark._id);
     setWindparks(deletedWindpark);
 
@@ -30,7 +30,7 @@ function Windparks() {
         <div className="container">
           <h1>Wind Farms</h1>
           <button className="windfarm-add-button">
-            <NavLink to="/windfarm/new" className="new-windfarm">
+            <NavLink to="/windparks/new" className="new-windfarm">
               Add Wind Farm
             </NavLink>
           </button>

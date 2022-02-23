@@ -6,5 +6,6 @@ export enum NewWindfarmType {
   mobileSubject = "Mobile",
   streetSubject = "Street",
   zipcodeSubject = "Zipcode",
+  manualSubject = "Manual",
   button = "LÄGG TILL",
 }

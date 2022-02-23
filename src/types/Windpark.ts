@@ -1,5 +1,5 @@
 export interface Windpark {
-  _id?: number;
+  _id: number;
   address: {
     street: string;
     zipcode: string;

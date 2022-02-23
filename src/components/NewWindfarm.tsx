@@ -4,16 +4,32 @@ import useForm from "./common/Form";
 import { NewWindfarmType } from "../types/NewWindfarmType";
 import "../styles/NewWindfarm.css";
 import { useHistory } from "react-router";
-import { saveWindfarm } from "../services/windParks";
+import { addWindparks } from "../services/windParks";
 import "../styles/NewWindfarm.css";
-import { NewWindfarmData } from "../types/NewWindfarmData";
+import { CreateWindfarmData } from "../types/CreateWindfarmData";
+
+interface WindparkForm {
+  name: string;
+  street: string;
+  zipcode: string;
+  email: string;
+  mobile: string;
+  troubleshootingManual: string;
+}
 
 interface stateType {
   from: { pathname: string };
 }
 
 export default function NewWindfarm() {
-  const data = { name: "", street: "", zipcode: "", email: "", mobile: "" };
+  const data = {
+    name: "",
+    street: "",
+    zipcode: "",
+    email: "",
+    mobile: "",
+    troubleshootingManual: "",
+  };
   const [errors, setErrots] = useState<any>();
   const history = useHistory<stateType>();
 
@@ -33,11 +49,31 @@ export default function NewWindfarm() {
       .min(10)
       .required()
       .label(NewWindfarmType.mobileSubject),
+    troubleshootingManual: Joi.string()
+      .min(10)
+      .required()
+      .label(NewWindfarmType.manualSubject),
   });
 
-  const doSubmit = async (data: NewWindfarmData) => {
-    await saveWindfarm(data);
-    history.replace("/windfarms");
+  function mapToViewModel(data: WindparkForm): CreateWindfarmData {
+    return {
+      address: {
+        street: data.street,
+        zipcode: data.zipcode,
+      },
+      contactInformation: {
+        name: data.name,
+        email: data.email,
+        mobile: data.mobile,
+      },
+      troubleshootingManual: data.troubleshootingManual,
+    };
+  }
+
+  const doSubmit = async (data: WindparkForm) => {
+    const windpark = mapToViewModel(data);
+    await addWindparks(windpark);
+    history.replace("/windparks");
   };
 
   const { renderButton, renderInput, handleSubmit } = useForm(
@@ -57,6 +93,7 @@ export default function NewWindfarm() {
         {renderInput("zipcode", NewWindfarmType.zipcodeSubject)}
         {renderInput("email", NewWindfarmType.emailSubject)}
         {renderInput("mobile", NewWindfarmType.mobileSubject)}
+        {renderInput("troubleshootingManual", NewWindfarmType.manualSubject)}
         {renderButton(NewWindfarmType.button)}
       </form>
     </div>

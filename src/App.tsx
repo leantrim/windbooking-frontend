@@ -13,9 +13,9 @@ export default function App() {
       <NavBar />
       {/* <h1>Windbooking</h1> */}
       <Switch>
-        <Route path="/windfarm/:id" component={NewWindfarm} />
+        <Route path="/windparks/:id" component={NewWindfarm} />
         <Route path="/home" component={Home} />
-        <Route path="/windfarms" component={Windfarms} />
+        <Route path="/windparks" component={Windfarms} />
         <Route path="/login" component={Login} />
         <Route path="/Signup" component={Signup} />
       </Switch>
