@@ -13,12 +13,22 @@ function TabelBody({ data, columns }: Props) {
     return item._id + column.path;
   };
 
+  const renderCell = (item: Technician, column: Column) => {
+    if (column.path === "location") {
+      return _.get(item, column.path);
+    } else if (_.get(item, column.path) === true) {
+      return "true";
+    } else {
+      return "false";
+    }
+  };
+
   return (
     <tbody>
       {data.map((item: Technician) => (
         <tr key={item._id}>
           {columns.map((column) => (
-            <td key={createKey(item, column)}>{_.get(item, column.path)}</td>
+            <td key={createKey(item, column)}>{renderCell(item, column)}</td>
           ))}
         </tr>
       ))}

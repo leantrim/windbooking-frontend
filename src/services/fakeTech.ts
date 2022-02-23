@@ -33,7 +33,7 @@ const techArray: Technician[] = [
   },
   {
     _id: "4",
-    electricalCompetence: true,
+    electricalCompetence: false,
     workPermitNorway: false,
     driverLicense: true,
     specificTools: false,
