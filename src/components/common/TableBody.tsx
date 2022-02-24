@@ -24,15 +24,17 @@ function TabelBody({ data, columns }: Props) {
   };
 
   return (
-    <tbody>
-      {data.map((item: Technician) => (
-        <tr key={item._id}>
-          {columns.map((column) => (
-            <td key={createKey(item, column)}>{renderCell(item, column)}</td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
+    <>
+      <tbody>
+        {data.map((item: Technician) => (
+          <tr key={item._id}>
+            {columns.map((column) => (
+              <td key={createKey(item, column)}>{renderCell(item, column)}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </>
   );
 }
 

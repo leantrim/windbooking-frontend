@@ -30,46 +30,25 @@ function FoodsTable() {
   }, []);
 
   const handleSort = (path: String) => {
-    console.log("click", path);
-    switch (path) {
-      case "electricalCompetence":
-        sortColumns.electricalCompetence = !sortColumns.electricalCompetence;
-        setSortColumns({ ...sortColumns });
-        break;
-      case "workPermitNorway":
-        sortColumns.workPermitNorway = !sortColumns.workPermitNorway;
-        setSortColumns({ ...sortColumns });
-        break;
-      case "driverLicense":
-        sortColumns.driverLicense = !sortColumns.driverLicense;
-        setSortColumns({ ...sortColumns });
-        break;
-      case "specificTools":
-        sortColumns.specificTools = !sortColumns.specificTools;
-        setSortColumns({ ...sortColumns });
-        break;
-      case "vanWithWinterTire":
-        sortColumns.vanWithWinterTire = !sortColumns.vanWithWinterTire;
-        setSortColumns({ ...sortColumns });
-        break;
-      case "available":
-        sortColumns.available = !sortColumns.available;
-        setSortColumns({ ...sortColumns });
-        break;
-
-      default:
-        break;
-    }
-
     for (const key in sortColumns) {
-      if (sortColumns[key] === true) {
-        const sorted = technicians.filter((technician) => {
-          return technician[key] === true;
-        });
-        setTechnicians(sorted);
+      if (key === path) {
+        sortColumns[key] = !sortColumns[key];
       }
     }
+    setSortColumns({ ...sortColumns });
   };
+
+  const getFiltered = () => {
+    let filtered = [...technicians];
+    for (const key in sortColumns) {
+      if (sortColumns[key] === true) {
+        filtered = filtered.filter((technician) => technician[key] === true);
+      }
+    }
+    return filtered;
+  };
+
+  const filtered = getFiltered();
 
   return (
     <table className={"table table-hover"}>
@@ -78,7 +57,7 @@ function FoodsTable() {
         sortColumns={sortColumns}
         onSort={handleSort}
       />
-      <TabelBody data={technicians} columns={columns} />
+      <TabelBody data={filtered} columns={columns} />
     </table>
   );
 }

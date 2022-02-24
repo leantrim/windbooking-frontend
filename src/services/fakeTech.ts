@@ -8,12 +8,12 @@ const techArray: Technician[] = [
     driverLicense: true,
     specificTools: true,
     vanWithWinterTire: false,
-    available: true,
+    available: false,
     location: "Sweden",
   },
   {
     _id: "2",
-    electricalCompetence: true,
+    electricalCompetence: false,
     workPermitNorway: false,
     driverLicense: false,
     specificTools: true,
@@ -33,7 +33,7 @@ const techArray: Technician[] = [
   },
   {
     _id: "4",
-    electricalCompetence: false,
+    electricalCompetence: true,
     workPermitNorway: false,
     driverLicense: true,
     specificTools: false,

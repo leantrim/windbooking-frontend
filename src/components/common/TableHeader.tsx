@@ -9,7 +9,8 @@ interface Props {
 
 function TabelHeader({ onSort, columns, sortColumns }: Props) {
   const renderSortIcon = (path: string) => {
-    if (sortColumns[path] === true)
+    if (path === "location") return;
+    else if (sortColumns[path] === true)
       return <i className="fas fa-check-circle" />;
     else return <i className="fas fa-circle"></i>;
   };
