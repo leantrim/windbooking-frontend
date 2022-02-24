@@ -23,6 +23,7 @@
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
 }
+
 .windfarm-form-container {
   grid-column: 3;
   align-items: center;
@@ -33,6 +34,7 @@
   background-color: #6aa84f;
   text-align: center;
   font-weight: 900;
+  margin-top: 30%;
 }
 
 .windfarm-title {

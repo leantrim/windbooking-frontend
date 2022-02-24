@@ -24,7 +24,7 @@ function App() {
       <NavBar user={user} />
 
       <Switch>
-        <Route path="/windfarm/:id" component={NewWindfarm} />
+        <Route path="/windfarm/new" component={NewWindfarm} />
         <Route path="/windfarm" component={WindFarm} />
         <Route path="/home" component={Home} />
         <ProtectedRoute path="/windfarm" component={WindFarm} />
