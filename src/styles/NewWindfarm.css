@@ -1,0 +1,103 @@
+.image {
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+
+.save-button {
+  background-color: #6aa84f;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 4px 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.save-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.windfarm-container {
+  display: inline-grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.windfarm-form-container {
+  grid-column: 3;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(34, 36, 37, 0.2) 0px 8px 24px;
+  border-radius: 8px;
+  padding-bottom: 20px;
+  background-color: #6aa84f;
+  text-align: center;
+  font-weight: 900;
+}
+
+.windfarm-title {
+  font-size: 18px;
+  border-bottom: 1px solid rgb(65, 143, 45);
+}
+
+.windfarm-errorresponse {
+  text-align: center;
+  background-color: rgb(157 7 7 / 87%);
+  font-weight: bold;
+  animation: blinker 3s linear infinite;
+}
+
+.windfarm-button {
+  background-color: green;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  transform: translate(0.3);
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px;
+  width: 72%;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.windfarm-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+  border: none;
+}
+
+.windfarm-form-label {
+  display: inline-block;
+  min-width: 360px;
+}
+
+.windfarm-form-control {
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid #777;
+  text-align: center;
+  font-size: 14px;
+  margin: 10px;
+  padding: 5px;
+  width: 70%;
+}
+
+.windfarm-alert {
+  text-align: center;
+  background-color: rgb(157 7 7 / 87%);
+  font-weight: bold;
+  font-size: 10px;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 5px;
+  margin-bottom: 10px;
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.3;
+  }
+}
