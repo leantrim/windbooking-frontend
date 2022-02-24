@@ -11,10 +11,13 @@ const NavBar = () => {
             <NavLink to="/home">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/windparks">Wind Farms</NavLink>
+            <NavLink to="/windfarm">Windfarms</NavLink>
           </li>
           <li>
             <NavLink to="/login">Login</NavLink>
+          </li>
+          <li>
+            <NavLink to="/logout">Logout</NavLink>
           </li>
         </ul>
       </div>

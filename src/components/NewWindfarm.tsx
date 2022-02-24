@@ -4,11 +4,11 @@ import useForm from "./common/Form";
 import { NewWindfarmType } from "../types/NewWindfarmType";
 import "../styles/NewWindfarm.css";
 import { useHistory } from "react-router";
-import { addWindparks } from "../services/windParks";
+import { addWindFarm } from "../services/windFarm";
 import "../styles/NewWindfarm.css";
-import { CreateWindfarmData } from "../types/CreateWindfarmData";
+import { CreateWindFarmData } from "../types/CreateWindfarmData";
 
-interface WindparkForm {
+interface WindFarmForm {
   name: string;
   street: string;
   zipcode: string;
@@ -55,7 +55,7 @@ export default function NewWindfarm() {
       .label(NewWindfarmType.manualSubject),
   });
 
-  function mapToViewModel(data: WindparkForm): CreateWindfarmData {
+  function mapToViewModel(data: WindFarmForm): CreateWindFarmData {
     return {
       address: {
         street: data.street,
@@ -70,10 +70,10 @@ export default function NewWindfarm() {
     };
   }
 
-  const doSubmit = async (data: WindparkForm) => {
-    const windpark = mapToViewModel(data);
-    await addWindparks(windpark);
-    history.replace("/windparks");
+  const doSubmit = async (data: WindFarmForm) => {
+    const windFarm = mapToViewModel(data);
+    await addWindFarm(windFarm);
+    history.replace("/windfarm");
   };
 
   const { renderButton, renderInput, handleSubmit } = useForm(

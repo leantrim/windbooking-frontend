@@ -1,12 +1,12 @@
 .image {
-  /* background-image: url("https://fatcamp.io/el.se/images/artiklar/havsvindkraft.jpg"); */
-  /* background-color: rgba(208, 243, 208, 0.9); */
+  background-image: url("https://fatcamp.io/el.se/images/artiklar/havsvindkraft.jpg");
+  background-color: rgba(208, 243, 208, 0.9);
   background-blend-mode: overlay;
   background-size: cover;
 }
-.parks {
+.farms {
   margin: 16px auto;
-  /* border: 1px solid grey; */
+  border: 1px solid grey;
   border-radius: 15px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -14,7 +14,7 @@
   place-items: left;
 }
 
-.parks .name {
+.farms .name {
   margin: 20px;
   color: #666;
   font-weight: bold;

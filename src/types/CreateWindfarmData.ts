@@ -1,4 +1,4 @@
-export interface CreateWindfarmData {
+export interface CreateWindFarmData {
   address: {
     street: string;
     zipcode: string;
