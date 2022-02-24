@@ -10,9 +10,10 @@
   box-shadow: rgba(34, 36, 37, 0.2) 0px 8px 24px;
   border-radius: 8px;
   padding-bottom: 20px;
-  background-color: #82af3e;
+  background-color: #6aa84f;
   text-align: center;
   font-weight: 900;
+  margin-top: 30%;
 }
 
 .register-signup-title {
