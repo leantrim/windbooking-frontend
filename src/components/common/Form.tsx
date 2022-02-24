@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { ObjectSchema } from "joi";
 import DropDownInput from "../common/DropdownInput";
 import Input from "../common/Input";
-import "../../styles/Signup.css";
-import "../../styles/Login.css";
 import { ValidateProperty } from "../../types/Form";
-import { ObjectSchema } from "joi";
+import "../../styles/Signup.css";
+import "../../styles/Profile.css";
+import "../../styles/Login.css";
 
 export default function useForm(
   initalData: any,
@@ -94,5 +95,6 @@ export default function useForm(
     renderInput,
     handleSubmit,
     setData,
+    data,
   };
 }
