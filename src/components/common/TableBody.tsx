@@ -6,9 +6,10 @@ import { Technician } from "../../types/TechnicianUpdated";
 interface Props {
   columns: Column[];
   data: Technician[];
+  onSelect: (technician: Technician) => void;
 }
 
-function TabelBody({ data, columns }: Props) {
+function TabelBody({ data, columns, onSelect }: Props) {
   const createKey = (item: Technician, column: Column) => {
     return item._id + column.path;
   };
@@ -27,7 +28,15 @@ function TabelBody({ data, columns }: Props) {
     <>
       <tbody>
         {data.map((item: Technician) => (
-          <tr key={item._id}>
+          <tr
+            style={
+              item.selected
+                ? { background: "blue" }
+                : { background: "transparent" }
+            }
+            key={item._id}
+            onClick={() => onSelect(item)}
+          >
             {columns.map((column) => (
               <td key={createKey(item, column)}>{renderCell(item, column)}</td>
             ))}

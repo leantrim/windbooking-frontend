@@ -5,7 +5,7 @@ import TabelHeader from "./common/TableHeader";
 import { Column, SortColumns } from "../types/Table";
 import { Technician } from "../types/TechnicianUpdated";
 
-function FoodsTable() {
+function TechTable() {
   const [technicians, setTechnicians] = useState<Technician[]>([]);
   const [columns, setColumns] = useState<Column[]>([
     { path: "available", label: "Available " },
@@ -29,6 +29,12 @@ function FoodsTable() {
     setTechnicians(fakeTech);
   }, []);
 
+  const handleSelect = (technician: Technician) => {
+    const index = technicians.indexOf(technician);
+    technicians[index].selected = !technician.selected;
+    setTechnicians([...technicians]);
+  };
+
   const handleFilter = (path: String) => {
     for (const key in filterSchema) {
       if (key === path) {
@@ -51,15 +57,15 @@ function FoodsTable() {
   const filtered = getFiltered();
 
   return (
-    <table className={"table table-hover"}>
+    <table className={"table table-hover"} style={{ cursor: "pointer" }}>
       <TabelHeader
         columns={columns}
         filterSchema={filterSchema}
         onFilter={handleFilter}
       />
-      <TabelBody data={filtered} columns={columns} />
+      <TabelBody data={filtered} columns={columns} onSelect={handleSelect} />
     </table>
   );
 }
 
-export default FoodsTable;
+export default TechTable;

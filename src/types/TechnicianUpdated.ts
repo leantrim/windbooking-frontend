@@ -8,4 +8,5 @@ export interface Technician {
   vanWithWinterTire: boolean;
   available: boolean;
   location: string;
+  selected: boolean;
 }
