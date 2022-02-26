@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Signup from "./components/Signup";
 import "./styles/App.css";
 import Home from "./components/Home";
@@ -24,14 +24,14 @@ function App() {
       <NavBar user={user} />
 
       <Switch>
-        <Route path="/windfarm/:id" component={NewWindfarm} />
-        <Route path="/windfarm" component={WindFarm} />
         <Route path="/home" component={Home} />
+        <ProtectedRoute path="/windFarm/:id" component={NewWindfarm} />
         <ProtectedRoute path="/windfarm" component={WindFarm} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
         <Route path="/logout" component={Logout} />
         <Route path="/Signup" component={Signup} />
+        <Redirect from="/" exact to="/home" />
       </Switch>
     </div>
   );
