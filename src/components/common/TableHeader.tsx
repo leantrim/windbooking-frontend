@@ -3,14 +3,14 @@ import { Column, SortColumns } from "../../types/Table";
 
 interface Props {
   columns: Column[];
-  sortColumns: SortColumns;
-  onSort: (path: String) => void;
+  filterSchema: SortColumns;
+  onFilter: (path: String) => void;
 }
 
-function TabelHeader({ onSort, columns, sortColumns }: Props) {
+function TabelHeader({ onFilter, columns, filterSchema }: Props) {
   const renderSortIcon = (path: string) => {
     if (path === "location") return;
-    else if (sortColumns[path] === true)
+    else if (filterSchema[path] === true)
       return <i className="fas fa-check-circle" />;
     else return <i className="fas fa-circle"></i>;
   };
@@ -19,7 +19,7 @@ function TabelHeader({ onSort, columns, sortColumns }: Props) {
     <thead>
       <tr>
         {columns.map((column: Column) => (
-          <th key={column.path} onClick={() => onSort(column.path)}>
+          <th key={column.path} onClick={() => onFilter(column.path)}>
             {column.label}
             {renderSortIcon(column.path)}
           </th>

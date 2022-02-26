@@ -17,9 +17,9 @@ function TabelBody({ data, columns }: Props) {
     if (column.path === "location") {
       return _.get(item, column.path);
     } else if (_.get(item, column.path) === true) {
-      return "true";
+      return <i className="fas fa-circle" style={{ color: "green" }}></i>;
     } else {
-      return "false";
+      return <i className="fas fa-circle" style={{ color: "red" }}></i>;
     }
   };
 

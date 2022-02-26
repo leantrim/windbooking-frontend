@@ -16,7 +16,7 @@ function FoodsTable() {
     { path: "vanWithWinterTire", label: "Van with winter tire " },
     { path: "location", label: "Location" },
   ]);
-  const [sortColumns, setSortColumns] = useState<SortColumns>({
+  const [filterSchema, setfilterSchema] = useState<SortColumns>({
     electricalCompetence: false,
     workPermitNorway: false,
     driverLicense: false,
@@ -29,19 +29,19 @@ function FoodsTable() {
     setTechnicians(fakeTech);
   }, []);
 
-  const handleSort = (path: String) => {
-    for (const key in sortColumns) {
+  const handleFilter = (path: String) => {
+    for (const key in filterSchema) {
       if (key === path) {
-        sortColumns[key] = !sortColumns[key];
+        filterSchema[key] = !filterSchema[key];
       }
     }
-    setSortColumns({ ...sortColumns });
+    setfilterSchema({ ...filterSchema });
   };
 
   const getFiltered = () => {
     let filtered = [...technicians];
-    for (const key in sortColumns) {
-      if (sortColumns[key] === true) {
+    for (const key in filterSchema) {
+      if (filterSchema[key] === true) {
         filtered = filtered.filter((technician) => technician[key] === true);
       }
     }
@@ -54,8 +54,8 @@ function FoodsTable() {
     <table className={"table table-hover"}>
       <TabelHeader
         columns={columns}
-        sortColumns={sortColumns}
-        onSort={handleSort}
+        filterSchema={filterSchema}
+        onFilter={handleFilter}
       />
       <TabelBody data={filtered} columns={columns} />
     </table>
