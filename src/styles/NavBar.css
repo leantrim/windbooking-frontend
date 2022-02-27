@@ -17,6 +17,6 @@ li a {
 }
 
 li :hover {
-  background-color: rgba(136, 189, 136, 0.637);
+  background-color: #6aa84f;
   color: white;
 }

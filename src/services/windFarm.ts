@@ -1,22 +1,17 @@
 import http from "./httpService";
-import apiBaseUrl from "../config.json";
-import { WindFarm } from "../types/WindFarm";
-import { WindFarmHeader } from "../types/WindFarmHeader";
+import config from "../config.json";
+import { CreateWindFarmData } from "../types/CreateWindfarmData";
 
-const apiEndpoint = `${apiBaseUrl}/windparks`;
+const apiEndpoint = `${config.apiBaseUrl}/windparks`;
 
 export function getWindFarms() {
-  return http.get("http://localhost:5000/api/windparks");
-}
-
-export function addWindFarm(windfarm: WindFarm) {
-  return http.post(apiEndpoint, windfarm);
-}
-
-export function getWindFarmHeaders() {
   return http.get(apiEndpoint);
 }
 
-export function addWindFarmHeaders(windfarmheader: WindFarmHeader) {
-  return http.post(apiEndpoint, windfarmheader);
+export function addWindFarm(windfarm: CreateWindFarmData) {
+  return http.post(apiEndpoint, windfarm);
+}
+
+export function deleteWindFarm(id: number) {
+  return http.delete(apiEndpoint + "/" + id);
 }

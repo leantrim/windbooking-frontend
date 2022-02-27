@@ -12,6 +12,8 @@ import Logout from "./components/Logout";
 import TechTable from "./components/TechTable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
+import ProtectedRoute from "./components/common/ProtectedRoute";
+import NewWindfarm from "./components/NewWindfarm";
 
 function App() {
   const [user, setUser] = useState<any>(null);
@@ -22,11 +24,13 @@ function App() {
 
   return (
     <div>
-      <NavBar />
+      <NavBar user={user} />
 
       <Switch>
-        <Route path="/home" component={Home} />
+        <Route path="/windfarm/:id" component={NewWindfarm} />
         <Route path="/windfarm" component={WindFarm} />
+        <Route path="/home" component={Home} />
+        <ProtectedRoute path="/windfarm" component={WindFarm} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
         <Route path="/logout" component={Logout} />
