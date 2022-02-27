@@ -30,6 +30,9 @@ const NavBar = ({ user }: any) => {
               </li>
             </>
           )}
+          <li>
+            <NavLink to="/techtable">Techtable</NavLink>
+          </li>
         </ul>
       </div>
     </nav>
