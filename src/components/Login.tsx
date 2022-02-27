@@ -5,6 +5,7 @@ import useForm from "./common/Form";
 import { LoginFormData } from "../types/Login";
 import { LoginType } from "../types/LoginFormType";
 import { useLocation } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "../styles/Login.css";
 
 interface stateType {
@@ -43,6 +44,8 @@ export default function Login() {
     doSubmit,
     className
   );
+
+  if (auth.getCurrentUser()) return <Redirect to="/home" />;
 
   return (
     <div className={className + "-container"}>
