@@ -8,6 +8,10 @@ export function getWindFarms() {
   return http.get(apiEndpoint);
 }
 
+export function getWindFarm(id: string) {
+  return http.get(apiEndpoint + "/" + id);
+}
+
 export function addWindFarm(windfarm: CreateWindFarmData) {
   return http.post(apiEndpoint, windfarm);
 }

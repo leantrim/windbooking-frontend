@@ -1,6 +1,6 @@
 .image {
-  background-image: url("https://fatcamp.io/el.se/images/artiklar/havsvindkraft.jpg");
-  background-color: rgba(208, 243, 208, 0.9);
+  /* background-image: url("https://fatcamp.io/el.se/images/artiklar/havsvindkraft.jpg"); */
+  /* background-color: rgba(208, 243, 208, 0.9); */
   background-blend-mode: overlay;
   background-size: cover;
 }

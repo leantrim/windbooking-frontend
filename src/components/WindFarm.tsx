@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link as NavLink } from "react-router-dom";
 import { deleteWindFarm, getWindFarms } from "../services/windFarm";
 import { WindFarm } from "../types/WindFarm";
 import "../styles/WindFarms.css";
@@ -40,7 +40,9 @@ function WindFarms() {
         </div>
         {windFarms?.map((windFarm) => (
           <div key={windFarm._id} className="row">
-            <span className="address">{windFarm.address.street}</span>
+            <NavLink to={`/windfarm/${windFarm._id}`} className="address">
+              {windFarm.address.street}
+            </NavLink>
             <span className="zipcode">{windFarm.address.zipcode}</span>
             <span className="manual">{windFarm.troubleshootingManual}</span>
             <span className="contactName">
@@ -58,7 +60,6 @@ function WindFarms() {
             ></button>
           </div>
         ))}
-        ;
       </div>
     </>
   );

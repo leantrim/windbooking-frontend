@@ -11,6 +11,7 @@ import auth from "./services/authService";
 import Logout from "./components/Logout";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import NewWindfarm from "./components/NewWindfarm";
+import EditWindFarm from "./components/EditWindFarm";
 
 function App() {
   const [user, setUser] = useState<any>(null);
@@ -24,6 +25,7 @@ function App() {
       <NavBar user={user} />
 
       <Switch>
+        <Route path="windfarm/:id" component={EditWindFarm} />
         <Route path="/windfarm/new" component={NewWindfarm} />
         <Route path="/windfarm" component={WindFarm} />
         <Route path="/home" component={Home} />
