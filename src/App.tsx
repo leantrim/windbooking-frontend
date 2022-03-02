@@ -10,8 +10,7 @@ import { useEffect, useState } from "react";
 import auth from "./services/authService";
 import Logout from "./components/Logout";
 import ProtectedRoute from "./components/common/ProtectedRoute";
-import NewWindfarm from "./components/NewWindfarm";
-import EditWindFarm from "./components/EditWindFarm";
+import NewWindFarm from "./components/WindFarmForm";
 
 function App() {
   const [user, setUser] = useState<any>(null);
@@ -25,11 +24,9 @@ function App() {
       <NavBar user={user} />
 
       <Switch>
-        <Route path="windfarm/:id" component={EditWindFarm} />
-        <Route path="/windfarm/new" component={NewWindfarm} />
-        <Route path="/windfarm" component={WindFarm} />
-        <Route path="/home" component={Home} />
+        <Route path="/windfarm/:id" component={NewWindFarm} />
         <ProtectedRoute path="/windfarm" component={WindFarm} />
+        <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
         <Route path="/logout" component={Logout} />

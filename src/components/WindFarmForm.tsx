@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Joi from "joi";
 import useForm from "./common/Form";
 import { NewWindfarmType } from "../types/NewWindfarmType";
 import "../styles/NewWindfarm.css";
-import { useHistory } from "react-router";
-import { addWindFarm } from "../services/windFarm";
+import { useHistory, useParams } from "react-router";
+import { addWindFarm, getWindFarm } from "../services/windFarm";
 import "../styles/NewWindfarm.css";
 import { CreateWindFarmData } from "../types/CreateWindfarmData";
 
@@ -21,8 +21,12 @@ interface stateType {
   from: { pathname: string };
 }
 
-export default function NewWindfarm() {
-  const data = {
+interface RouteParams {
+  id: string;
+}
+
+export default function NewWindFarm() {
+  let data = {
     name: "",
     street: "",
     zipcode: "",
@@ -30,10 +34,26 @@ export default function NewWindfarm() {
     mobile: "",
     troubleshootingManual: "",
   };
-  const [errors, setErrots] = useState<any>();
-  const history = useHistory<stateType>();
 
+  //eventuellt ha denna i en useState
+
+  const [errors, setErrors] = useState<any>();
+  const history = useHistory<stateType>();
   const className = NewWindfarmType.classname;
+  const { id } = useParams<RouteParams>();
+
+  async function populateWindFarm() {
+    if (id !== "new") {
+      const { data: windFarm } = await getWindFarm(id);
+
+      data = mapToViewModel(windFarm); //const formData = mapToViewModel
+      //setInitalData = mapToViewModel
+    }
+  }
+
+  useEffect(() => {
+    populateWindFarm();
+  });
 
   const schema = Joi.object({
     name: Joi.string().min(2).required().label(NewWindfarmType.nameSubject),
@@ -55,7 +75,7 @@ export default function NewWindfarm() {
       .label(NewWindfarmType.manualSubject),
   });
 
-  function mapToViewModel(data: WindFarmForm): CreateWindFarmData {
+  function mapToViewDb(data: WindFarmForm): CreateWindFarmData {
     return {
       address: {
         street: data.street,
@@ -70,8 +90,19 @@ export default function NewWindfarm() {
     };
   }
 
+  function mapToViewModel(data: CreateWindFarmData): WindFarmForm {
+    return {
+      street: data.address.street,
+      zipcode: data.address.zipcode,
+      name: data.contactInformation.name,
+      email: data.contactInformation.email,
+      mobile: data.contactInformation.mobile,
+      troubleshootingManual: data.troubleshootingManual,
+    };
+  }
+
   const doSubmit = async (data: WindFarmForm) => {
-    const windFarm = mapToViewModel(data);
+    const windFarm = mapToViewDb(data);
     await addWindFarm(windFarm);
     history.replace("/windfarm");
   };
