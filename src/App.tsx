@@ -10,8 +10,6 @@ import { useEffect, useState } from "react";
 import auth from "./services/authService";
 import Logout from "./components/Logout";
 import TechTable from "./components/TechTable";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/css/bootstrap.css";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import NewWindfarm from "./components/NewWindfarm";
 
@@ -23,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="main">
       <NavBar user={user} />
 
       <Switch>

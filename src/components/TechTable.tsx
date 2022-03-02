@@ -4,6 +4,7 @@ import TabelBody from "./common/TableBody";
 import TabelHeader from "./common/TableHeader";
 import { Column, SortColumns } from "../types/Table";
 import { Technician } from "../types/TechnicianUpdated";
+import "../styles/TechTable.css";
 
 function TechTable() {
   const [technicians, setTechnicians] = useState<Technician[]>([]);
@@ -57,14 +58,18 @@ function TechTable() {
   const filtered = getFiltered();
 
   return (
-    <table className={"table table-hover"} style={{ cursor: "pointer" }}>
-      <TabelHeader
-        columns={columns}
-        filterSchema={filterSchema}
-        onFilter={handleFilter}
-      />
-      <TabelBody data={filtered} columns={columns} onSelect={handleSelect} />
-    </table>
+    <div className="tech-main">
+      <div className="tech-filter">
+        <TabelHeader
+          columns={columns}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+        />
+      </div>
+      <div className={"tech-table"} style={{ cursor: "pointer" }}>
+        <TabelBody data={filtered} columns={columns} onSelect={handleSelect} />
+      </div>
+    </div>
   );
 }
 
