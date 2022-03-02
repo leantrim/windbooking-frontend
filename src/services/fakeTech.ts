@@ -3,6 +3,8 @@ import { Technician } from "../types/TechnicianUpdated";
 const techArray: Technician[] = [
   {
     _id: "1",
+    name: "Albin",
+    company: "IntesiveCode",
     electricalCompetence: true,
     workPermitNorway: false,
     driverLicense: true,
@@ -14,6 +16,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "2",
+    name: "Amanda",
+    company: "IntesiveCode",
     electricalCompetence: false,
     workPermitNorway: false,
     driverLicense: false,
@@ -25,6 +29,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "3",
+    name: "Leutrim",
+    company: "IntesiveCode",
     electricalCompetence: true,
     workPermitNorway: false,
     driverLicense: false,
@@ -36,6 +42,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "4",
+    name: "Catarina",
+    company: "IntesiveCode",
     electricalCompetence: true,
     workPermitNorway: false,
     driverLicense: true,
@@ -47,6 +55,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "5",
+    name: "Aladin",
+    company: "IntesiveCode",
     electricalCompetence: true,
     workPermitNorway: true,
     driverLicense: true,
@@ -58,6 +68,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "6",
+    name: "Wolcker",
+    company: "IntesiveCode",
     electricalCompetence: true,
     workPermitNorway: true,
     driverLicense: true,
@@ -69,6 +81,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "7",
+    name: "Adam",
+    company: "IntesiveCode",
     electricalCompetence: true,
     workPermitNorway: true,
     driverLicense: false,
@@ -80,6 +94,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "8",
+    name: "Hesam",
+    company: "IntesiveCode",
     electricalCompetence: false,
     workPermitNorway: true,
     driverLicense: true,
@@ -91,6 +107,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "9",
+    name: "Mohammed",
+    company: "IntesiveCode",
     electricalCompetence: false,
     workPermitNorway: true,
     driverLicense: true,
@@ -102,6 +120,8 @@ const techArray: Technician[] = [
   },
   {
     _id: "10",
+    name: "Ahmed",
+    company: "IntesiveCode",
     electricalCompetence: true,
     workPermitNorway: false,
     driverLicense: true,
