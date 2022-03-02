@@ -24,13 +24,13 @@ function App() {
       <NavBar user={user} />
 
       <Switch>
-        <Route path="/home" component={Home} />
-        <ProtectedRoute path="/windFarm/:id" component={NewWindfarm} />
-        <ProtectedRoute path="/windfarm" component={WindFarm} />
+        <ProtectedRoute path="/windFarms/:id" component={NewWindfarm} />
+        <ProtectedRoute path="/windfarms" component={WindFarm} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
         <Route path="/logout" component={Logout} />
         <Route path="/Signup" component={Signup} />
+        <Route path="/home" component={Home} />
         <Redirect from="/" exact to="/home" />
       </Switch>
     </div>
