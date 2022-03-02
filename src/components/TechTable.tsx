@@ -9,13 +9,15 @@ import "../styles/TechTable.css";
 function TechTable() {
   const [technicians, setTechnicians] = useState<Technician[]>([]);
   const [columns, setColumns] = useState<Column[]>([
+    { path: "name", label: "Name" },
+    { path: "company", label: "Company" },
+    { path: "location", label: "Location" },
     { path: "available", label: "Available " },
     { path: "electricalCompetence", label: "Electrical competence " },
     { path: "workPermitNorway", label: "Work permit Norway " },
     { path: "driverLicense", label: "Driver license " },
     { path: "specificTools", label: "Specific tools " },
     { path: "vanWithWinterTire", label: "Van with winter tire " },
-    { path: "location", label: "Location" },
   ]);
   const [filterSchema, setfilterSchema] = useState<SortColumns>({
     electricalCompetence: false,

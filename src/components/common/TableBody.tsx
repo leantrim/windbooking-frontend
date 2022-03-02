@@ -15,10 +15,27 @@ function TabelBody({ data, columns, onSelect }: Props) {
   };
 
   const renderCell = (item: Technician, column: Column) => {
-    if (column.path === "location") {
-      return _.get(item, column.path);
-    } else if (_.get(item, column.path) === true) {
-      return <i className="fas fa-circle" style={{ color: "green" }}></i>;
+    switch (column.path) {
+      case "location":
+        return (
+          <span className="tech-row-location">{_.get(item, column.path)}</span>
+        );
+      case "name":
+        return (
+          <span className="tech-row-name">{_.get(item, column.path)}</span>
+        );
+
+      case "company":
+        return (
+          <span className="tech-row-company">{_.get(item, column.path)}</span>
+        );
+
+      default:
+        break;
+    }
+
+    if (_.get(item, column.path) === true) {
+      return <i className="fas fa-circle " style={{ color: "green" }}></i>;
     } else {
       return <i className="fas fa-circle" style={{ color: "red" }}></i>;
     }
@@ -26,9 +43,10 @@ function TabelBody({ data, columns, onSelect }: Props) {
 
   return (
     <>
-      <tbody>
+      <div className="tech-body">
         {data.map((item: Technician) => (
-          <tr
+          <div
+            className="tech-row"
             style={
               item.selected
                 ? { background: "blue" }
@@ -37,12 +55,10 @@ function TabelBody({ data, columns, onSelect }: Props) {
             key={item._id}
             onClick={() => onSelect(item)}
           >
-            {columns.map((column) => (
-              <td key={createKey(item, column)}>{renderCell(item, column)}</td>
-            ))}
-          </tr>
+            {columns.map((column) => renderCell(item, column))}
+          </div>
         ))}
-      </tbody>
+      </div>
     </>
   );
 }
