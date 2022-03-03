@@ -4,17 +4,20 @@ import TabelBody from "./common/TableBody";
 import TabelHeader from "./common/TableHeader";
 import { Column, SortColumns } from "../types/Table";
 import { Technician } from "../types/TechnicianUpdated";
+import "../styles/TechTable.css";
 
 function TechTable() {
   const [technicians, setTechnicians] = useState<Technician[]>([]);
   const [columns, setColumns] = useState<Column[]>([
-    { path: "available", label: "Available " },
-    { path: "electricalCompetence", label: "Electrical competence " },
-    { path: "workPermitNorway", label: "Work permit Norway " },
-    { path: "driverLicense", label: "Driver license " },
-    { path: "specificTools", label: "Specific tools " },
-    { path: "vanWithWinterTire", label: "Van with winter tire " },
+    { path: "name", label: "Name" },
+    { path: "company", label: "Company" },
     { path: "location", label: "Location" },
+    { path: "available", label: "Available" },
+    { path: "electricalCompetence", label: "Electrical competence" },
+    { path: "workPermitNorway", label: "Work permit Norway" },
+    { path: "driverLicense", label: "Driver license" },
+    { path: "specificTools", label: "Specific tools" },
+    { path: "vanWithWinterTire", label: "Van with winter tire" },
   ]);
   const [filterSchema, setfilterSchema] = useState<SortColumns>({
     electricalCompetence: false,
@@ -57,14 +60,18 @@ function TechTable() {
   const filtered = getFiltered();
 
   return (
-    <table className={"table table-hover"} style={{ cursor: "pointer" }}>
-      <TabelHeader
-        columns={columns}
-        filterSchema={filterSchema}
-        onFilter={handleFilter}
-      />
-      <TabelBody data={filtered} columns={columns} onSelect={handleSelect} />
-    </table>
+    <div className="tech-main">
+      <div className="tech-filter">
+        <TabelHeader
+          columns={columns}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+        />
+      </div>
+      <div className={"tech-table"} style={{ cursor: "pointer" }}>
+        <TabelBody data={filtered} columns={columns} onSelect={handleSelect} />
+      </div>
+    </div>
   );
 }
 
