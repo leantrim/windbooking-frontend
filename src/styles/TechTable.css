@@ -5,14 +5,14 @@
 .tech-table {
   grid-column: 1;
   grid-row: 1;
-  width: 75vw;
+  width: 70vw;
   height: 90vh;
   background-color: #34403a;
 }
 
 .tech-filter {
   grid-column: 2;
-  width: 25vw;
+  width: 30vw;
   height: 90vh;
   background-color: #285238;
 }
@@ -34,7 +34,7 @@
 }
 
 .filler {
-  width: 15%;
+  width: 12%;
 }
 
 .tech-row-name {
@@ -49,7 +49,6 @@
   font-weight: bold;
   letter-spacing: 0.1em;
   color: #ffffff;
-
   width: 20%;
 }
 .tech-row-location {
@@ -61,25 +60,29 @@
 }
 
 .main-filter {
+  margin-top: 3vh;
   display: grid;
-  justify-content: space-around;
+  justify-content: center;
   color: #ffffff;
   font-weight: bold;
   letter-spacing: 0.1em;
 }
 
 .filter-path {
+  grid-column: 2;
+  width: 15vw;
+}
+
+.filter-icon {
   grid-column: 1;
+  color: #de9151;
+  width: 3vw;
 }
 
 .filter-button {
-  grid-column: 2;
+  grid-column: 3;
   color: #de9151;
   font-size: larger;
-}
-
-.filter-path {
-  grid-column: 1;
 }
 
 .icon-box {

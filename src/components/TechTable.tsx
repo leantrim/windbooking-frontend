@@ -12,12 +12,12 @@ function TechTable() {
     { path: "name", label: "Name" },
     { path: "company", label: "Company" },
     { path: "location", label: "Location" },
-    { path: "available", label: "Available " },
-    { path: "electricalCompetence", label: "Electrical competence " },
-    { path: "workPermitNorway", label: "Work permit Norway " },
-    { path: "driverLicense", label: "Driver license " },
-    { path: "specificTools", label: "Specific tools " },
-    { path: "vanWithWinterTire", label: "Van with winter tire " },
+    { path: "available", label: "Available" },
+    { path: "electricalCompetence", label: "Electrical competence" },
+    { path: "workPermitNorway", label: "Work permit Norway" },
+    { path: "driverLicense", label: "Driver license" },
+    { path: "specificTools", label: "Specific tools" },
+    { path: "vanWithWinterTire", label: "Van with winter tire" },
   ]);
   const [filterSchema, setfilterSchema] = useState<SortColumns>({
     electricalCompetence: false,

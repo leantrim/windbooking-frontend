@@ -24,10 +24,31 @@ function TabelHeader({ onFilter, columns, filterSchema }: Props) {
     else return label;
   };
 
+  const renderIcon = (label: string) => {
+    switch (label) {
+      case "Available":
+        return <i className="fas fa-user-check" />;
+      case "Electrical competence":
+        return <i className="fas fa-bolt"></i>;
+      case "Work permit Norway":
+        return <i className="fas fa-flag"></i>;
+      case "Driver license":
+        return <i className="fas fa-shuttle-van"></i>;
+      case "Van with winter tire":
+        return <i className="fas fa-snowflake"></i>;
+      case "Specific tools":
+        return <i className="fas fa-wrench"></i>;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="main-filter">
       {columns.map((column: Column) => (
         <>
+          <span className="filter-icon">{renderIcon(column.label)}</span>
           <span className="filter-path" key={column.path}>
             {renderLabel(column.label)}
           </span>
