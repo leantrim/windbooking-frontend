@@ -22,6 +22,7 @@ async function login(user: any) {
 }
 
 function loginWithJwt(jwt: any) {
+  console.log(jwt);
   localStorage.setItem(tokenKey, jwt);
 }
 
