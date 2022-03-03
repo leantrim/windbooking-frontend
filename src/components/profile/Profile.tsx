@@ -40,7 +40,7 @@ function Profile() {
       {me.userType === "Technician" && !isEdit && (
         <TechProfile technician={me} onEditClick={toggleEdit} />
       )}
-      {me.userType === "Planner" && <PlannerProfile planner={me} />}
+      {/* {me.userType === "Planner" && <PlannerProfile planner={me} />} */}
     </div>
   );
 }

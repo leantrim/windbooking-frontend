@@ -1,22 +1,30 @@
+.main-nav {
+  height: 10vh;
+  border-bottom: solid black 2px;
+  background-color: #de9151;
+}
+
 ul {
+  height: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #6aa84f;
 }
 
 li a {
   float: left;
   display: block;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 16px;
   text-decoration: none;
-  color: #666;
+  color: #34403a;
   text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.1em;
 }
 
 li :hover {
-  background-color: #6aa84f;
-  color: white;
+  background-color: #34403a;
+  color: #fff;
 }

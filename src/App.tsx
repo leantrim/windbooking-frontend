@@ -9,6 +9,7 @@ import Profile from "./components/profile/Profile";
 import { useEffect, useState } from "react";
 import auth from "./services/authService";
 import Logout from "./components/Logout";
+import TechTable from "./components/TechTable";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import NewWindfarm from "./components/NewWindfarm";
 
@@ -20,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="main">
       <NavBar user={user} />
 
       <Switch>
@@ -31,6 +32,7 @@ function App() {
         <Route path="/logout" component={Logout} />
         <Route path="/Signup" component={Signup} />
         <Route path="/home" component={Home} />
+        <Route path="/TechTable" component={TechTable} />
         <Redirect from="/" exact to="/home" />
       </Switch>
     </div>
