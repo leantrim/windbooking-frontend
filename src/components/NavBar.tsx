@@ -11,7 +11,7 @@ const NavBar = ({ user }: any) => {
             <NavLink to="/home">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/windfarm">Windfarms</NavLink>
+            <NavLink to="/windfarms">Windfarms</NavLink>
           </li>
           {!user && (
             <>

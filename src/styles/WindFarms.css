@@ -36,7 +36,7 @@
   box-shadow: 2px 2px 8px 2px #6aa84f;
 }
 
-.row .address {
+.row .name {
   grid-column: 1;
   grid-row: 1;
   margin: 20px;
@@ -44,9 +44,41 @@
   border-top: none;
 }
 
-.row .zipcode {
+.row .address {
   grid-column: 1;
   grid-row: 2;
+  margin: 20px;
+  color: #666;
+  border-top: none;
+}
+
+.row .zipcode {
+  grid-column: 1;
+  grid-row: 3;
+  margin: 20px;
+  color: #666;
+  border-top: none;
+}
+
+.row .city {
+  grid-column: 1;
+  grid-row: 3;
+  margin: 20px;
+  color: #666;
+  border-top: none;
+}
+
+.row .county {
+  grid-column: 1;
+  grid-row: 4;
+  margin: 20px;
+  color: #666;
+  border-top: none;
+}
+
+.row .country {
+  grid-column: 1;
+  grid-row: 5;
   margin: 20px;
   color: #666;
   border-top: none;
@@ -60,7 +92,7 @@
   border-top: none;
 }
 
-.row .contactName {
+.row .hub-height {
   grid-column: 3;
   grid-row: 1;
   margin: 20px;
@@ -68,7 +100,7 @@
   border-top: none;
 }
 
-.row .contactEmail {
+.row .elevator-type {
   grid-column: 3;
   grid-row: 2;
   margin: 20px;
@@ -76,7 +108,7 @@
   border-top: none;
 }
 
-.row .contactMobile {
+.row .commissioning-date {
   grid-column: 3;
   grid-row: 3;
   margin: 20px;
@@ -84,6 +116,21 @@
   border-top: none;
 }
 
+.row .safety-equipment {
+  grid-column: 3;
+  grid-row: 4;
+  margin: 20px;
+  color: #666;
+  border-top: none;
+}
+
+.row .number-of-wt {
+  grid-column: 3;
+  grid-row: 5;
+  margin: 20px;
+  color: #666;
+  border-top: none;
+}
 .fa-trash-alt {
   grid-column: 4;
   margin: 20px;

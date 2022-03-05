@@ -1,4 +1,3 @@
-import Joi from "joi";
 import useForm from "./common/Form";
 import { useState, useEffect } from "react";
 import { NewWindfarmType } from "../types/NewWindfarmType";
@@ -7,13 +6,21 @@ import { addWindFarm, getWindFarm } from "../services/windFarm";
 import { CreateWindFarmData } from "../types/CreateWindfarmData";
 import "../styles/NewWindfarm.css";
 import "../styles/NewWindfarm.css";
+const Joi = require("joi").extend(require("@joi/date"));
 
 interface WindFarmForm {
   name: string;
   street: string;
   zipcode: string;
-  email: string;
-  mobile: string;
+  city: string;
+  county: string;
+  country: string;
+  company: string;
+  hubHeight: string;
+  elevatorType: string;
+  commissioningDate: string;
+  safetyEquipment: string;
+  numberOfWindTurbines: string;
   troubleshootingManual: string;
 }
 
@@ -30,8 +37,15 @@ export default function NewWindFarm() {
     name: "",
     street: "",
     zipcode: "",
-    email: "",
-    mobile: "",
+    city: "",
+    county: "",
+    country: "",
+    company: "",
+    hubHeight: "",
+    elevatorType: "",
+    commissioningDate: "",
+    safetyEquipment: "",
+    numberOfWindTurbines: "",
     troubleshootingManual: "",
   };
   const [errors, setErrors] = useState<any>();
@@ -59,13 +73,36 @@ export default function NewWindFarm() {
       .min(5)
       .required()
       .label(NewWindfarmType.zipcodeSubject),
-    email: Joi.string()
-      .email({ tlds: { allow: false } })
-      .label(NewWindfarmType.emailSubject),
-    mobile: Joi.string()
-      .min(10)
+    city: Joi.string().min(2).required().label(NewWindfarmType.citySubject),
+    county: Joi.string().min(2).required().label(NewWindfarmType.countySubject),
+    country: Joi.string()
+      .min(2)
       .required()
-      .label(NewWindfarmType.mobileSubject),
+      .label(NewWindfarmType.countrySubject),
+    company: Joi.string()
+      .min(2)
+      .required()
+      .label(NewWindfarmType.companySubject),
+    hubHeight: Joi.string()
+      .min(2)
+      .required()
+      .label(NewWindfarmType.hubHeightSubject),
+    elevatorType: Joi.string()
+      .min(2)
+      .required()
+      .label(NewWindfarmType.elevatorSubject),
+    commissioningDate: Joi.date()
+      .format(["YYYY/MM/DD", "DD-MM-YYYY"])
+      .required()
+      .label(NewWindfarmType.commissioningDateSubject),
+    safetyEquipment: Joi.string()
+      .min(2)
+      .required()
+      .label(NewWindfarmType.safetyEquipmentSubject),
+    numberOfWindTurbines: Joi.string()
+      .min(2)
+      .required()
+      .label(NewWindfarmType.numberOfWindTurbinesSubject),
     troubleshootingManual: Joi.string()
       .min(10)
       .required()
@@ -75,25 +112,41 @@ export default function NewWindFarm() {
   function mapToViewDb(data: WindFarmForm): CreateWindFarmData {
     return {
       address: {
+        name: data.name,
         street: data.street,
         zipcode: data.zipcode,
+        city: data.city,
+        county: data.county,
+        country: data.country,
       },
-      contactInformation: {
-        name: data.name,
-        email: data.email,
-        mobile: data.mobile,
+      owner: {
+        company: data.company,
       },
       troubleshootingManual: data.troubleshootingManual,
+      windFarmDetails: {
+        hubHeight: data.hubHeight,
+        elevatorType: data.elevatorType,
+        commissioningDate: data.commissioningDate,
+        safetyEquipment: data.safetyEquipment,
+        numberOfWindTurbines: data.numberOfWindTurbines,
+      },
     };
   }
 
   function mapToViewModel(data: CreateWindFarmData): WindFarmForm {
     return {
+      name: data.address.name,
       street: data.address.street,
       zipcode: data.address.zipcode,
-      name: data.contactInformation.name,
-      email: data.contactInformation.email,
-      mobile: data.contactInformation.mobile,
+      city: data.address.city,
+      county: data.address.county,
+      country: data.address.country,
+      company: data.owner.company,
+      hubHeight: data.windFarmDetails.hubHeight,
+      elevatorType: data.windFarmDetails.elevatorType,
+      commissioningDate: data.windFarmDetails.commissioningDate,
+      safetyEquipment: data.windFarmDetails.safetyEquipment,
+      numberOfWindTurbines: data.windFarmDetails.numberOfWindTurbines,
       troubleshootingManual: data.troubleshootingManual,
     };
   }
@@ -119,8 +172,24 @@ export default function NewWindFarm() {
         {renderInput("name", NewWindfarmType.nameSubject)}
         {renderInput("street", NewWindfarmType.streetSubject)}
         {renderInput("zipcode", NewWindfarmType.zipcodeSubject)}
-        {renderInput("email", NewWindfarmType.emailSubject)}
-        {renderInput("mobile", NewWindfarmType.mobileSubject)}
+        {renderInput("city", NewWindfarmType.citySubject)}
+        {renderInput("county", NewWindfarmType.countySubject)}
+        {renderInput("country", NewWindfarmType.countrySubject)}
+        {renderInput("hub height", NewWindfarmType.hubHeightSubject)}
+        {renderInput("elevator type", NewWindfarmType.elevatorSubject)}
+        {renderInput(
+          "commissioning date",
+          NewWindfarmType.commissioningDateSubject
+        )}
+        {renderInput(
+          "safety equipment",
+          NewWindfarmType.safetyEquipmentSubject
+        )}
+        {renderInput(
+          "number of wind turbines",
+          NewWindfarmType.numberOfWindTurbinesSubject
+        )}
+        {renderInput("company", NewWindfarmType.companySubject)}
         {renderInput("troubleshootingManual", NewWindfarmType.manualSubject)}
         {renderButton(NewWindfarmType.button)}
       </form>

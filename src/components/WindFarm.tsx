@@ -36,23 +36,34 @@ function WindFarms() {
         <div className="farms">
           <span className="name">Address</span>
           <span className="name">Troubleshooting Manual</span>
-          <span className="name">Contact Information</span>
+          <span className="name">Wind Farm Details</span>
         </div>
         {windFarms?.map((windFarm) => (
           <div key={windFarm._id} className="row">
-            <NavLink to={`/windfarm/${windFarm._id}`} className="address">
-              {windFarm.address.street}
+            <NavLink to={`/windfarm/${windFarm._id}`} className="name">
+              {windFarm.address.name}
             </NavLink>
+            <span className="street">{windFarm.address.street}</span>
             <span className="zipcode">{windFarm.address.zipcode}</span>
+            <span className="city">{windFarm.address.city}</span>
+            <span className="county">{windFarm.address.county}</span>
+            <span className="country">{windFarm.address.country}</span>
+            <span className="company">{windFarm.owner.company}</span>
             <span className="manual">{windFarm.troubleshootingManual}</span>
-            <span className="contactName">
-              {windFarm.contactInformation.name}
+            <span className="hub-height">
+              {windFarm.windFarmDetails.hubHeight}
             </span>
-            <span className="contactEmail">
-              {windFarm.contactInformation.email}
+            <span className="elevator-type">
+              {windFarm.windFarmDetails.elevatorType}
             </span>
-            <span className="contactMobile">
-              {windFarm.contactInformation.mobile}
+            <span className="commissioning-date">
+              {windFarm.windFarmDetails.commissioningDate}
+            </span>
+            <span className="safety-equipment">
+              {windFarm.windFarmDetails.safetyEquipment}
+            </span>
+            <span className="number-of-wt">
+              {windFarm.windFarmDetails.numberOfWindTurbines}
             </span>
             <button
               onClick={() => handleDelete(windFarm)}

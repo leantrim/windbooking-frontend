@@ -1,13 +1,22 @@
 export interface WindFarm {
   _id: number;
   address: {
+    name: string;
     street: string;
     zipcode: string;
+    city: string;
+    county: string;
+    country: string;
   };
   troubleshootingManual: string;
-  contactInformation: {
-    name: string;
-    email: string;
-    mobile: string;
+  owner: {
+    company: string;
+  };
+  windFarmDetails: {
+    hubHeight: string;
+    elevatorType: string;
+    commissioningDate: string;
+    safetyEquipment: string;
+    numberOfWindTurbines: string;
   };
 }
