@@ -30,8 +30,8 @@ export default function Signup() {
 
   const doSubmit = async (data: SignupFormData) => {
     try {
-      const { headers } = await user.register(data);
-      auth.loginWithJwt(headers["x-auth-token"]);
+      await user.register(data);
+      await auth.login(data);
       window.location.href = "/home";
     } catch (error: any) {
       if (error.response && error.response.status === 400) {
