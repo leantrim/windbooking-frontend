@@ -92,7 +92,7 @@ export default function NewWindFarm() {
       .required()
       .label(NewWindfarmType.elevatorSubject),
     commissioningDate: Joi.date()
-      .format(["YYYY/MM/DD", "DD-MM-YYYY"])
+      .format("YYYY/MM/DD")
       .required()
       .label(NewWindfarmType.commissioningDateSubject),
     safetyEquipment: Joi.string()
@@ -175,18 +175,15 @@ export default function NewWindFarm() {
         {renderInput("city", NewWindfarmType.citySubject)}
         {renderInput("county", NewWindfarmType.countySubject)}
         {renderInput("country", NewWindfarmType.countrySubject)}
-        {renderInput("hub height", NewWindfarmType.hubHeightSubject)}
-        {renderInput("elevator type", NewWindfarmType.elevatorSubject)}
+        {renderInput("hubHeight", NewWindfarmType.hubHeightSubject)}
+        {renderInput("elevatorType", NewWindfarmType.elevatorSubject)}
         {renderInput(
-          "commissioning date",
+          "commissioningDate",
           NewWindfarmType.commissioningDateSubject
         )}
+        {renderInput("safetyEquipment", NewWindfarmType.safetyEquipmentSubject)}
         {renderInput(
-          "safety equipment",
-          NewWindfarmType.safetyEquipmentSubject
-        )}
-        {renderInput(
-          "number of wind turbines",
+          "numberOfWindTurbines",
           NewWindfarmType.numberOfWindTurbinesSubject
         )}
         {renderInput("company", NewWindfarmType.companySubject)}
