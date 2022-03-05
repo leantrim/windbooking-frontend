@@ -8,12 +8,12 @@ import "../../styles/Profile.css";
 import "../../styles/Login.css";
 
 export default function useForm(
-  initalData: any,
+  initialData: any,
   joiSchema: ObjectSchema,
   doSubmit: (formData: any) => Promise<void>,
   style: string
 ) {
-  const [data, setData] = useState<any>(initalData);
+  const [data, setData] = useState<any>(initialData);
   const [errors, setErrors] = useState<any>({});
 
   const validate = () => {

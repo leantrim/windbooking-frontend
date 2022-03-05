@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
 import Joi from "joi";
 import useForm from "./common/Form";
+import { useState, useEffect } from "react";
 import { NewWindfarmType } from "../types/NewWindfarmType";
-import "../styles/NewWindfarm.css";
 import { useHistory, useParams } from "react-router";
 import { addWindFarm, getWindFarm } from "../services/windFarm";
-import "../styles/NewWindfarm.css";
 import { CreateWindFarmData } from "../types/CreateWindfarmData";
+import "../styles/NewWindfarm.css";
+import "../styles/NewWindfarm.css";
 
 interface WindFarmForm {
   name: string;
@@ -26,7 +26,7 @@ interface RouteParams {
 }
 
 export default function NewWindFarm() {
-  let data = {
+  const initialData = {
     name: "",
     street: "",
     zipcode: "",
@@ -34,9 +34,6 @@ export default function NewWindFarm() {
     mobile: "",
     troubleshootingManual: "",
   };
-
-  //eventuellt ha denna i en useState
-
   const [errors, setErrors] = useState<any>();
   const history = useHistory<stateType>();
   const className = NewWindfarmType.classname;
@@ -46,14 +43,14 @@ export default function NewWindFarm() {
     if (id !== "new") {
       const { data: windFarm } = await getWindFarm(id);
 
-      data = mapToViewModel(windFarm); //const formData = mapToViewModel
-      //setInitalData = mapToViewModel
+      const viewModel = mapToViewModel(windFarm);
+      setData(viewModel);
     }
   }
 
   useEffect(() => {
     populateWindFarm();
-  });
+  }, []);
 
   const schema = Joi.object({
     name: Joi.string().min(2).required().label(NewWindfarmType.nameSubject),
@@ -107,8 +104,8 @@ export default function NewWindFarm() {
     history.replace("/windfarm");
   };
 
-  const { renderButton, renderInput, handleSubmit } = useForm(
-    data,
+  const { renderButton, renderInput, handleSubmit, setData } = useForm(
+    initialData,
     schema,
     doSubmit,
     className
