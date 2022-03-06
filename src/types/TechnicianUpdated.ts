@@ -1,14 +1,21 @@
 export interface Technician {
-  [key: string]: boolean | string | DriverLicense;
+  [key: string]: boolean | string | DriverLicense | ElectricalCompetence;
   _id: string;
   name: string;
   company: string;
   location: string;
-  electricalCompetence: boolean;
+  electricalCompetence: ElectricalCompetence;
   workPermitNorway: boolean;
   driverLicense: DriverLicense;
   available: boolean;
   selected: boolean;
+}
+
+interface ElectricalCompetence {
+  Electrical1: boolean;
+  Electrical2: boolean;
+  Electrical3: boolean;
+  Electrical4: boolean;
 }
 
 interface DriverLicense {

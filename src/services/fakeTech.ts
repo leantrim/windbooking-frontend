@@ -5,7 +5,12 @@ const techArray: Technician[] = [
     _id: "1",
     name: "Albin",
     company: "IntesiveCode",
-    electricalCompetence: true,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: true,
+      Electrical3: true,
+      Electrical4: true,
+    },
     workPermitNorway: false,
     driverLicense: {
       a: false,
@@ -22,7 +27,12 @@ const techArray: Technician[] = [
     _id: "2",
     name: "Amanda",
     company: "IntesiveCode",
-    electricalCompetence: false,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: true,
+      Electrical3: true,
+      Electrical4: false,
+    },
     workPermitNorway: false,
     driverLicense: {
       a: false,
@@ -39,7 +49,12 @@ const techArray: Technician[] = [
     _id: "3",
     name: "Leutrim",
     company: "IntesiveCode",
-    electricalCompetence: true,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: true,
+      Electrical3: false,
+      Electrical4: false,
+    },
     workPermitNorway: false,
     driverLicense: {
       a: false,
@@ -56,7 +71,12 @@ const techArray: Technician[] = [
     _id: "4",
     name: "Catarina",
     company: "IntesiveCode",
-    electricalCompetence: true,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: false,
+      Electrical3: false,
+      Electrical4: false,
+    },
     workPermitNorway: false,
     driverLicense: {
       a: false,
@@ -73,7 +93,12 @@ const techArray: Technician[] = [
     _id: "5",
     name: "Aladin",
     company: "IntesiveCode",
-    electricalCompetence: true,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: true,
+      Electrical3: true,
+      Electrical4: true,
+    },
     workPermitNorway: true,
     driverLicense: {
       a: false,
@@ -90,7 +115,12 @@ const techArray: Technician[] = [
     _id: "6",
     name: "Wolcker",
     company: "IntesiveCode",
-    electricalCompetence: true,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: false,
+      Electrical3: false,
+      Electrical4: false,
+    },
     workPermitNorway: true,
     driverLicense: {
       a: false,
@@ -107,7 +137,12 @@ const techArray: Technician[] = [
     _id: "7",
     name: "Adam",
     company: "IntesiveCode",
-    electricalCompetence: true,
+    electricalCompetence: {
+      Electrical1: false,
+      Electrical2: false,
+      Electrical3: true,
+      Electrical4: false,
+    },
     workPermitNorway: true,
     driverLicense: {
       a: false,
@@ -124,7 +159,12 @@ const techArray: Technician[] = [
     _id: "8",
     name: "Hesam",
     company: "IntesiveCode",
-    electricalCompetence: false,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: true,
+      Electrical3: false,
+      Electrical4: true,
+    },
     workPermitNorway: true,
     driverLicense: {
       a: true,
@@ -141,7 +181,12 @@ const techArray: Technician[] = [
     _id: "9",
     name: "Mohammed",
     company: "IntesiveCode",
-    electricalCompetence: false,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: false,
+      Electrical3: true,
+      Electrical4: false,
+    },
     workPermitNorway: true,
     driverLicense: {
       a: true,
@@ -158,7 +203,12 @@ const techArray: Technician[] = [
     _id: "10",
     name: "Ahmed",
     company: "IntesiveCode",
-    electricalCompetence: true,
+    electricalCompetence: {
+      Electrical1: true,
+      Electrical2: false,
+      Electrical3: true,
+      Electrical4: false,
+    },
     workPermitNorway: false,
     driverLicense: {
       a: false,
