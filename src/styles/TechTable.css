@@ -6,15 +6,15 @@
   grid-column: 1;
   grid-row: 1;
   width: 70vw;
-  height: 90vh;
-  background-color: #34403a;
+  height: 100%;
+  background-color: #81a8c5;
 }
 
 .tech-filter {
   grid-column: 2;
   width: 30vw;
   height: 90vh;
-  background-color: #285238;
+  background-color: #ffffff;
 }
 
 .tech-body {
@@ -32,38 +32,27 @@
   color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
+.icon {
+  color: #07020d;
+}
 
 .filler {
   width: 12%;
 }
 
-.tech-row-name {
-  font-size: medium;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  width: 15%;
-  color: #ffffff;
-}
-.tech-row-company {
-  font-size: medium;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-  width: 20%;
-}
-.tech-row-location {
+.tech-row-content {
   font-size: medium;
   font-weight: bold;
   letter-spacing: 0.1em;
   width: 20%;
-  color: #ffffff;
+  color: #07020d;
 }
 
 .main-filter {
   margin-top: 3vh;
   display: grid;
   justify-content: center;
-  color: #ffffff;
+  color: #07020d;
   font-weight: bold;
   letter-spacing: 0.1em;
 }
@@ -75,19 +64,19 @@
 
 .filter-icon {
   grid-column: 1;
-  color: #de9151;
+  color: #6aa84f;
   width: 3vw;
 }
 
 .filter-button {
   grid-column: 3;
-  color: #de9151;
+  color: #6aa84f;
   font-size: larger;
 }
 
 .icon-box {
   text-align: center;
-  background-color: #de9151;
+  background-color: #ffffff;
   height: 30px;
   width: 30px;
   border-radius: 30px;
@@ -101,26 +90,12 @@
   font-size: larger;
 }
 
-.header-name {
-  font-size: large;
-  font-weight: bolder;
-  letter-spacing: 0.1em;
-  width: 15%;
-  color: #ffffff;
-}
-.header-location {
+.header {
   font-size: large;
   font-weight: bolder;
   letter-spacing: 0.1em;
   width: 20%;
-  color: #ffffff;
-}
-.header-company {
-  font-size: large;
-  font-weight: bolder;
-  letter-spacing: 0.1em;
-  width: 20%;
-  color: #ffffff;
+  color: #07020d;
 }
 
 .pointer {

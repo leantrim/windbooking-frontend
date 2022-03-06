@@ -47,15 +47,13 @@ function TabelHeader({ onFilter, columns, filterSchema }: Props) {
   return (
     <div className="main-filter">
       {columns.map((column: Column) => (
-        <>
+        <React.Fragment key={column.path}>
           <span className="filter-icon">{renderIcon(column.label)}</span>
-          <span className="filter-path" key={column.path}>
-            {renderLabel(column.label)}
-          </span>
+          <span className="filter-path">{renderLabel(column.label)}</span>
           <span className="filter-button" onClick={() => onFilter(column.path)}>
             {renderSortIcon(column.path)}
           </span>
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
