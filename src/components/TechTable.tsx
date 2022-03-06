@@ -13,6 +13,12 @@ function TechTable() {
     { path: "company", label: "Company" },
     { path: "location", label: "Location" },
     { path: "available", label: "Available" },
+    { path: "safetyCourses", label: "Safety courses" },
+    { path: "safety1", label: "Safety1" },
+    { path: "safety2", label: "Safety2" },
+    { path: "safety3", label: "Safety3" },
+    { path: "safety4", label: "Safety4" },
+    { path: "safety5", label: "Safety5" },
     { path: "electricalCompetence", label: "Electrical competence" },
     { path: "electrical1", label: "Electrical1" },
     { path: "electrical2", label: "Electrical2" },
@@ -27,6 +33,7 @@ function TechTable() {
     { path: "c1", label: "C1" },
   ]);
   const [filterSchema, setfilterSchema] = useState<SortColumns>({
+    available: false,
     workPermitNorway: false,
     a: false,
     b: false,
@@ -37,7 +44,11 @@ function TechTable() {
     electrical2: false,
     electrical3: false,
     electrical4: false,
-    available: false,
+    safety1: false,
+    safety2: false,
+    safety3: false,
+    safety4: false,
+    safety5: false,
   });
 
   useEffect(() => {
@@ -65,7 +76,6 @@ function TechTable() {
       if (filterSchema[key] === true) {
         filtered = filtered.filter((technician) => {
           const technicianVm: any = mapToViewModel(technician);
-          console.log(technicianVm);
           return technicianVm[key] === true;
         });
       }
@@ -86,12 +96,17 @@ function TechTable() {
       be: technician.driverLicense.be,
       c: technician.driverLicense.c,
       c1: technician.driverLicense.c1,
-      electrical1: technician.electricalCompetence.Electrical1,
-      electrical2: technician.electricalCompetence.Electrical2,
-      electrical3: technician.electricalCompetence.Electrical3,
-      electrical4: technician.electricalCompetence.Electrical4,
+      electrical1: technician.electricalCompetence.electrical1,
+      electrical2: technician.electricalCompetence.electrical2,
+      electrical3: technician.electricalCompetence.electrical3,
+      electrical4: technician.electricalCompetence.electrical4,
       available: technician.available,
       selected: technician.selected,
+      safety1: technician.safetyCourses.safety1,
+      safety2: technician.safetyCourses.safety2,
+      safety3: technician.safetyCourses.safety3,
+      safety4: technician.safetyCourses.safety4,
+      safety5: technician.safetyCourses.safety5,
     };
   };
 
