@@ -65,6 +65,7 @@ function TechTable() {
           options={safetyOptions}
           filterSchema={filterSchema}
           onFilter={handleFilter}
+          icon="fas fa-hard-hat"
         />
       ),
     },
@@ -77,10 +78,10 @@ function TechTable() {
           options={electricalOptions}
           filterSchema={filterSchema}
           onFilter={handleFilter}
+          icon="fas fa-bolt"
         />
       ),
     },
-
     {
       path: "driverLicense",
       label: "Driver license",
@@ -90,6 +91,7 @@ function TechTable() {
           options={driverOptions}
           filterSchema={filterSchema}
           onFilter={handleFilter}
+          icon="fas fa-shuttle-van"
         />
       ),
     },

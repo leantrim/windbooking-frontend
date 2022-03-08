@@ -1,4 +1,3 @@
-import { string } from "joi";
 import React, { useState } from "react";
 import { Column, SortColumns } from "../../types/Table";
 
@@ -7,6 +6,7 @@ interface props {
   options: any;
   onFilter: (path: string) => void;
   filterSchema: SortColumns;
+  icon: string;
 }
 
 interface Option {
@@ -14,14 +14,20 @@ interface Option {
   label: string;
 }
 
-function FilterDropList({ column, options, filterSchema, onFilter }: props) {
+function FilterDropList({
+  column,
+  options,
+  filterSchema,
+  onFilter,
+  icon,
+}: props) {
   const [isOpen, setOpen] = useState<boolean>(false);
 
   return (
     <>
       <div className="filter-main-element">
         <span className="filter-icon">
-          <i className="fas fa-hard-hat"></i>
+          <i className={icon}></i>
         </span>
         <span className="filter-path">{column.label}</span>
         <span

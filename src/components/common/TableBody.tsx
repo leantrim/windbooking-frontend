@@ -55,11 +55,16 @@ function TabelBody({ data, columns, onSelect }: Props) {
               <i className="fas fa-wrench icon"></i>
             </span>
           );
+        case "safetyCourses":
+          return (
+            <span className="icon-box">
+              <i className="fas fa-hard-hat icon"></i>
+            </span>
+          );
 
         default:
           break;
       }
-      return <i className="fas fa-circle " style={{ color: "#DE9151" }}></i>;
     }
   };
 
@@ -77,7 +82,7 @@ function TabelBody({ data, columns, onSelect }: Props) {
             className="tech-row"
             style={
               item.selected
-                ? { background: "#6aa84f", borderRight: "solid black" }
+                ? { background: "#6aa84f" }
                 : { background: "transparent" }
             }
             key={item._id}
