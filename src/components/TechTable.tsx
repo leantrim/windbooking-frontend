@@ -6,6 +6,7 @@ import { Column, SortColumns } from "../types/Table";
 import { Technician } from "../types/TechnicianUpdated";
 import "../styles/TechTable.css";
 import FilterDropList from "./common/FilterDropList";
+import FilterSingelOption from "./common/FilterSingelOption";
 
 function TechTable() {
   const [technicians, setTechnicians] = useState<Technician[]>([]);
@@ -31,7 +32,30 @@ function TechTable() {
     { path: "name", label: "Name" },
     { path: "company", label: "Company" },
     { path: "location", label: "Location" },
-    { path: "available", label: "Available" },
+    {
+      path: "available",
+      label: "Available",
+      filterContent: (column) => (
+        <FilterSingelOption
+          column={column}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+          icon="fas fa-user-check"
+        />
+      ),
+    },
+    {
+      path: "workPermitNorway",
+      label: "Work permit Norway",
+      filterContent: (column) => (
+        <FilterSingelOption
+          column={column}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+          icon="fas fa-flag"
+        />
+      ),
+    },
     {
       path: "safetyCourses",
       label: "Safety courses",
@@ -57,7 +81,6 @@ function TechTable() {
       ),
     },
 
-    { path: "workPermitNorway", label: "Work permit Norway" },
     {
       path: "driverLicense",
       label: "Driver license",
@@ -159,11 +182,7 @@ function TechTable() {
   return (
     <div className="tech-main">
       <div className="tech-filter">
-        <TableFilter
-          columns={columns}
-          filterSchema={filterSchema}
-          onFilter={handleFilter}
-        />
+        <TableFilter columns={columns} />
       </div>
       <div className={"tech-table"} style={{ cursor: "pointer" }}>
         <TabelBody data={filtered} columns={columns} onSelect={handleSelect} />

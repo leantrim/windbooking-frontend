@@ -4,33 +4,9 @@ import "../styles/TechFilter.css";
 
 interface Props {
   columns: Column[];
-  filterSchema: SortColumns;
-  onFilter: (path: String) => void;
 }
 
-function TableFilter({ onFilter, columns, filterSchema }: Props) {
-  const renderSortIcon = (path: string) => {
-    if (
-      [
-        "location",
-        "name",
-        "company",
-        "safetyCourses",
-        "electricalCompetence",
-        "driverLicense",
-      ].includes(path)
-    )
-      return;
-    else if (filterSchema[path])
-      return <i className="fas fa-check-circle pointer" />;
-    else return <i className="fas fa-circle pointer"></i>;
-  };
-
-  const renderLabel = (label: string) => {
-    if (["Location", "Name", "Company"].includes(label)) return;
-    else return label;
-  };
-
+function TableFilter({ columns }: Props) {
   const renderIcon = (path: string) => {
     switch (path) {
       case "available":
@@ -48,16 +24,6 @@ function TableFilter({ onFilter, columns, filterSchema }: Props) {
 
   const renderMenu = (column: Column) => {
     if (column.filterContent) return column.filterContent(column);
-
-    // return (
-    //   <>
-    //     <span className="filter-icon">{renderIcon(column.path)}</span>
-    //     <span className="filter-path">{renderLabel(column.label)}</span>
-    //     <span className="filter-button" onClick={() => onFilter(column.path)}>
-    //       {renderSortIcon(column.path)}
-    //     </span>
-    //   </>
-    // );
   };
 
   return (
