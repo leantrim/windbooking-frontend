@@ -1,0 +1,50 @@
+.main-filter {
+  margin-top: 3vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  color: #07020d;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.filter-main-element {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  justify-items: center;
+  border: solid black;
+  border-radius: 10px;
+  width: 80%;
+  margin: 8px;
+}
+
+.filter-drop-list {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  justify-items: center;
+}
+
+.filter-icon {
+  font-size: large;
+  grid-column: 1;
+  color: #6aa84f;
+}
+
+.filter-path {
+  grid-column: 2;
+  justify-self: left;
+  letter-spacing: 0.1em;
+  padding-left: 10%;
+}
+
+.filter-button {
+  grid-column: 3;
+  color: #6aa84f;
+  font-size: 25px;
+}
+.filter-button:hover {
+  transform: scale(1.15);
+}

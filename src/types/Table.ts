@@ -1,6 +1,7 @@
 export interface Column {
   path: string;
   label: string;
+  filterContent?: (Column: Column) => any;
 }
 
 export interface SortColumns {

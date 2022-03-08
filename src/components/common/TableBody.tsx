@@ -2,6 +2,7 @@ import React from "react";
 import _ from "lodash";
 import { Column } from "../../types/Table";
 import { Technician } from "../../types/TechnicianUpdated";
+import "../../styles/TechBody.css";
 
 interface Props {
   columns: Column[];

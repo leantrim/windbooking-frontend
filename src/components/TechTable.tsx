@@ -1,37 +1,14 @@
 import React, { useEffect, useState } from "react";
 import fakeTech from "../services/fakeTech";
 import TabelBody from "./common/TableBody";
-import TabelHeader from "./common/TableHeader";
+import TableFilter from "./TableFilter";
 import { Column, SortColumns } from "../types/Table";
 import { Technician } from "../types/TechnicianUpdated";
 import "../styles/TechTable.css";
+import FilterDropList from "./common/FilterDropList";
 
 function TechTable() {
   const [technicians, setTechnicians] = useState<Technician[]>([]);
-  const [columns, setColumns] = useState<Column[]>([
-    { path: "name", label: "Name" },
-    { path: "company", label: "Company" },
-    { path: "location", label: "Location" },
-    { path: "available", label: "Available" },
-    { path: "safetyCourses", label: "Safety courses" },
-    { path: "safety1", label: "Safety1" },
-    { path: "safety2", label: "Safety2" },
-    { path: "safety3", label: "Safety3" },
-    { path: "safety4", label: "Safety4" },
-    { path: "safety5", label: "Safety5" },
-    { path: "electricalCompetence", label: "Electrical competence" },
-    { path: "electrical1", label: "Electrical1" },
-    { path: "electrical2", label: "Electrical2" },
-    { path: "electrical3", label: "Electrical3" },
-    { path: "electrical4", label: "Electrical4" },
-    { path: "workPermitNorway", label: "Work permit Norway" },
-    { path: "driverLicense", label: "Driver license" },
-    { path: "a", label: "A" },
-    { path: "b", label: "B" },
-    { path: "be", label: "BE" },
-    { path: "c", label: "C" },
-    { path: "c1", label: "C1" },
-  ]);
   const [filterSchema, setfilterSchema] = useState<SortColumns>({
     available: false,
     workPermitNorway: false,
@@ -50,6 +27,73 @@ function TechTable() {
     safety4: false,
     safety5: false,
   });
+  const [columns, setColumns] = useState<Column[]>([
+    { path: "name", label: "Name" },
+    { path: "company", label: "Company" },
+    { path: "location", label: "Location" },
+    { path: "available", label: "Available" },
+    {
+      path: "safetyCourses",
+      label: "Safety courses",
+      filterContent: (column) => (
+        <FilterDropList
+          column={column}
+          options={safetyOptions}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+        />
+      ),
+    },
+    {
+      path: "electricalCompetence",
+      label: "Electrical competence",
+      filterContent: (column) => (
+        <FilterDropList
+          column={column}
+          options={electricalOptions}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+        />
+      ),
+    },
+
+    { path: "workPermitNorway", label: "Work permit Norway" },
+    {
+      path: "driverLicense",
+      label: "Driver license",
+      filterContent: (column) => (
+        <FilterDropList
+          column={column}
+          options={driverOptions}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+        />
+      ),
+    },
+  ]);
+
+  const safetyOptions = [
+    { path: "safety1", label: "Safety1" },
+    { path: "safety2", label: "Safety2" },
+    { path: "safety3", label: "Safety3" },
+    { path: "safety4", label: "Safety4" },
+    { path: "safety5", label: "Safety5" },
+  ];
+
+  const electricalOptions = [
+    { path: "electrical1", label: "Electrical1" },
+    { path: "electrical2", label: "Electrical2" },
+    { path: "electrical3", label: "Electrical3" },
+    { path: "electrical4", label: "Electrical4" },
+  ];
+
+  const driverOptions = [
+    { path: "a", label: "A" },
+    { path: "b", label: "B" },
+    { path: "be", label: "BE" },
+    { path: "c", label: "C" },
+    { path: "c1", label: "C1" },
+  ];
 
   useEffect(() => {
     setTechnicians(fakeTech);
@@ -115,7 +159,7 @@ function TechTable() {
   return (
     <div className="tech-main">
       <div className="tech-filter">
-        <TabelHeader
+        <TableFilter
           columns={columns}
           filterSchema={filterSchema}
           onFilter={handleFilter}
