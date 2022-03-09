@@ -2,6 +2,7 @@ import React from "react";
 import _ from "lodash";
 import { Column } from "../../types/Table";
 import { Technician } from "../../types/TechnicianUpdated";
+import "../../styles/TechBody.css";
 
 interface Props {
   columns: Column[];
@@ -10,73 +11,60 @@ interface Props {
 }
 
 function TabelBody({ data, columns, onSelect }: Props) {
-  const createKey = (item: Technician, column: Column) => {
-    return item._id + column.path;
-  };
-
   const renderCell = (item: Technician, column: Column) => {
-    switch (column.path) {
-      case "location":
-        return (
-          <span className="tech-row-location">{_.get(item, column.path)}</span>
-        );
-      case "name":
-        return (
-          <span className="tech-row-name">{_.get(item, column.path)}</span>
-        );
+    if (["location", "name", "company"].includes(column.path))
+      return (
+        <span className="tech-row-content">{_.get(item, column.path)}</span>
+      );
 
-      case "company":
-        return (
-          <span className="tech-row-company">{_.get(item, column.path)}</span>
-        );
-
-      default:
-        break;
-    }
-
-    if (_.get(item, column.path) === true) {
+    if (_.get(item, column.path)) {
       switch (column.path) {
         case "available":
           return (
             <span className="icon-box">
-              <i className="fas fa-user-check"></i>
+              <i className="fas fa-user-check icon"></i>
             </span>
           );
         case "electricalCompetence":
           return (
             <span className="icon-box">
-              <i className="fas fa-bolt"></i>
+              <i className="fas fa-bolt icon"></i>
             </span>
           );
         case "workPermitNorway":
           return (
             <span className="icon-box">
-              <i className="fas fa-flag"></i>
+              <i className="fas fa-flag icon"></i>
             </span>
           );
         case "driverLicense":
           return (
             <span className="icon-box">
-              <i className="fas fa-shuttle-van"></i>
+              <i className="fas fa-shuttle-van icon"></i>
             </span>
           );
         case "vanWithWinterTire":
           return (
             <span className="icon-box">
-              <i className="fas fa-snowflake"></i>
+              <i className="fas fa-snowflake icon"></i>
             </span>
           );
         case "specificTools":
           return (
             <span className="icon-box">
-              <i className="fas fa-wrench"></i>
+              <i className="fas fa-wrench icon"></i>
+            </span>
+          );
+        case "safetyCourses":
+          return (
+            <span className="icon-box">
+              <i className="fas fa-hard-hat icon"></i>
             </span>
           );
 
         default:
           break;
       }
-      return <i className="fas fa-circle " style={{ color: "#DE9151" }}></i>;
     }
   };
 
@@ -85,16 +73,16 @@ function TabelBody({ data, columns, onSelect }: Props) {
       <div className="tech-body">
         <div className="main-header">
           <span className="filler" />
-          <span className="header-name">Name</span>
-          <span className="header-company">Company</span>
-          <span className="header-location">Location</span>
+          <span className="header">Name</span>
+          <span className="header">Company</span>
+          <span className="header">Location</span>
         </div>
         {data.map((item: Technician) => (
           <div
             className="tech-row"
             style={
               item.selected
-                ? { background: "#285238", borderRight: "solid black" }
+                ? { background: "#6aa84f" }
                 : { background: "transparent" }
             }
             key={item._id}
