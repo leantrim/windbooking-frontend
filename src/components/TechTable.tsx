@@ -27,6 +27,13 @@ function TechTable() {
     safety3: false,
     safety4: false,
     safety5: false,
+    elevator1: false,
+    elevator2: false,
+    elevator3: false,
+    elevator4: false,
+    x: false,
+    y: false,
+    z: false,
   });
   const [columns, setColumns] = useState<Column[]>([
     { path: "name", label: "Name" },
@@ -95,6 +102,32 @@ function TechTable() {
         />
       ),
     },
+    {
+      path: "elevatorCourses",
+      label: "Elevator courses",
+      filterContent: (column) => (
+        <FilterDropList
+          column={column}
+          options={elevatorOptions}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+          icon="fas fa-door-closed"
+        />
+      ),
+    },
+    {
+      path: "troubleshooting",
+      label: "Troubleshooting",
+      filterContent: (column) => (
+        <FilterDropList
+          column={column}
+          options={troubleshootingOptions}
+          filterSchema={filterSchema}
+          onFilter={handleFilter}
+          icon="fas fa-briefcase"
+        />
+      ),
+    },
   ]);
 
   const safetyOptions = [
@@ -118,6 +151,19 @@ function TechTable() {
     { path: "be", label: "BE" },
     { path: "c", label: "C" },
     { path: "c1", label: "C1" },
+  ];
+
+  const elevatorOptions = [
+    { path: "elevator1", label: "Elevator1" },
+    { path: "elevator2", label: "Elevator2" },
+    { path: "elevator3", label: "Elevator3" },
+    { path: "elevator4", label: "Elevator4" },
+  ];
+
+  const troubleshootingOptions = [
+    { path: "x", label: "X" },
+    { path: "y", label: "Y" },
+    { path: "z", label: "Z" },
   ];
 
   useEffect(() => {
@@ -176,6 +222,13 @@ function TechTable() {
       safety3: technician.safetyCourses.safety3,
       safety4: technician.safetyCourses.safety4,
       safety5: technician.safetyCourses.safety5,
+      elevator1: technician.elevatorCourses.elevator1,
+      elevator2: technician.elevatorCourses.elevator2,
+      elevator3: technician.elevatorCourses.elevator3,
+      elevator4: technician.elevatorCourses.elevator4,
+      x: technician.troubleshooting.x,
+      y: technician.troubleshooting.y,
+      z: technician.troubleshooting.z,
     };
   };
 

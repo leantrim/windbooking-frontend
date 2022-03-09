@@ -21,6 +21,7 @@
   align-self: center;
   justify-self: center;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .tech-table::-webkit-scrollbar {

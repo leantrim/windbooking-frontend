@@ -29,6 +29,17 @@ const techArray: Technician[] = [
     available: false,
     location: "Sweden",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: false,
+      elevator3: true,
+      elevator4: false,
+    },
+    troubleshooting: {
+      x: true,
+      y: false,
+      z: true,
+    },
   },
   {
     _id: "2",
@@ -58,6 +69,17 @@ const techArray: Technician[] = [
     available: true,
     location: "Norway",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: false,
+      elevator3: true,
+      elevator4: false,
+    },
+    troubleshooting: {
+      x: true,
+      y: false,
+      z: true,
+    },
   },
   {
     _id: "3",
@@ -87,6 +109,17 @@ const techArray: Technician[] = [
     available: true,
     location: "Germany",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: false,
+      elevator3: true,
+      elevator4: false,
+    },
+    troubleshooting: {
+      x: true,
+      y: false,
+      z: true,
+    },
   },
   {
     _id: "4",
@@ -116,6 +149,17 @@ const techArray: Technician[] = [
     available: true,
     location: "Sweden",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: false,
+      elevator3: true,
+      elevator4: false,
+    },
+    troubleshooting: {
+      x: true,
+      y: true,
+      z: false,
+    },
   },
   {
     _id: "5",
@@ -145,6 +189,17 @@ const techArray: Technician[] = [
     available: true,
     location: "Norway",
     selected: false,
+    elevatorCourses: {
+      elevator1: false,
+      elevator2: false,
+      elevator3: true,
+      elevator4: true,
+    },
+    troubleshooting: {
+      x: true,
+      y: false,
+      z: true,
+    },
   },
   {
     _id: "6",
@@ -174,6 +229,17 @@ const techArray: Technician[] = [
     available: true,
     location: "Germany",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: false,
+      elevator3: true,
+      elevator4: false,
+    },
+    troubleshooting: {
+      x: false,
+      y: false,
+      z: true,
+    },
   },
   {
     _id: "7",
@@ -203,6 +269,17 @@ const techArray: Technician[] = [
     available: true,
     location: "Denmark",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: false,
+      elevator3: false,
+      elevator4: true,
+    },
+    troubleshooting: {
+      x: true,
+      y: true,
+      z: false,
+    },
   },
   {
     _id: "8",
@@ -232,6 +309,17 @@ const techArray: Technician[] = [
     available: false,
     location: "Norway",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: true,
+      elevator3: false,
+      elevator4: false,
+    },
+    troubleshooting: {
+      x: true,
+      y: true,
+      z: false,
+    },
   },
   {
     _id: "9",
@@ -261,6 +349,17 @@ const techArray: Technician[] = [
     available: true,
     location: "Sweden",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: false,
+      elevator3: true,
+      elevator4: false,
+    },
+    troubleshooting: {
+      x: true,
+      y: false,
+      z: true,
+    },
   },
   {
     _id: "10",
@@ -290,6 +389,17 @@ const techArray: Technician[] = [
     available: false,
     location: "Poland",
     selected: false,
+    elevatorCourses: {
+      elevator1: true,
+      elevator2: false,
+      elevator3: true,
+      elevator4: false,
+    },
+    troubleshooting: {
+      x: true,
+      y: false,
+      z: true,
+    },
   },
 ];
 

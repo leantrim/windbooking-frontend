@@ -37,4 +37,5 @@ li a {
 li :hover {
   background-color: #81a8c5;
   color: #fff;
+  border-bottom: solid black;
 }

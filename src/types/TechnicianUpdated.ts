@@ -4,7 +4,9 @@ export interface Technician {
     | string
     | DriverLicense
     | ElectricalCompetence
-    | SafetyCourses;
+    | SafetyCourses
+    | Troubleshooting
+    | ElevatorCourses;
   _id: string;
   name: string;
   company: string;
@@ -13,6 +15,8 @@ export interface Technician {
   electricalCompetence: ElectricalCompetence;
   workPermitNorway: boolean;
   driverLicense: DriverLicense;
+  troubleshooting: Troubleshooting;
+  elevatorCourses: ElevatorCourses;
   available: boolean;
   selected: boolean;
 }
@@ -30,6 +34,17 @@ interface ElectricalCompetence {
   electrical2: boolean;
   electrical3: boolean;
   electrical4: boolean;
+}
+interface Troubleshooting {
+  x: boolean;
+  y: boolean;
+  z: boolean;
+}
+interface ElevatorCourses {
+  elevator1: boolean;
+  elevator2: boolean;
+  elevator3: boolean;
+  elevator4: boolean;
 }
 
 interface DriverLicense {
