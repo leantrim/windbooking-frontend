@@ -92,7 +92,7 @@ export default function NewWindFarm() {
       .required()
       .label(NewWindfarmType.elevatorSubject),
     commissioningDate: Joi.date()
-      .format("YYYY/MM/DD")
+      .format("YYYY-MM-DD")
       .required()
       .label(NewWindfarmType.commissioningDateSubject),
     safetyEquipment: Joi.string()
@@ -154,7 +154,7 @@ export default function NewWindFarm() {
   const doSubmit = async (data: WindFarmForm) => {
     const windFarm = mapToViewDb(data);
     await addWindFarm(windFarm);
-    history.replace("/windfarm");
+    history.replace("/windfarms");
   };
 
   const { renderButton, renderInput, handleSubmit, setData } = useForm(

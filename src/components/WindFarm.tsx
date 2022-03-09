@@ -28,7 +28,7 @@ function WindFarms() {
         <div className="container">
           <h1>Wind Farms</h1>
           <button className="windfarm-add-button">
-            <NavLink to="/windfarm/new" className="new-windfarm">
+            <NavLink to="/windfarms/new" className="new-windfarm">
               Add Wind Farm
             </NavLink>
           </button>
@@ -41,7 +41,7 @@ function WindFarms() {
         </div>
         {windFarms?.map((windFarm) => (
           <div key={windFarm._id} className="row">
-            <NavLink to={`/windfarm/${windFarm._id}`} className="name">
+            <NavLink to={`/windfarms/${windFarm._id}`} className="name">
               {windFarm.address.name}
             </NavLink>
             <div className="address">

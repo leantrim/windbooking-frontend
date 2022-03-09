@@ -17,5 +17,5 @@ export function addWindFarm(windfarm: CreateWindFarmData) {
 }
 
 export function deleteWindFarm(id: number) {
-  return http.delete(apiEndpoint + "/" + id);
+  return http.delete("http://localhost:5000/api/windfarms" + "/" + id);
 }
