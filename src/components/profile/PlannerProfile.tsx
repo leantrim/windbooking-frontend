@@ -1,9 +1,10 @@
 import React from "react";
 import "../../styles/Profile.css";
 import { Planner } from "../../types/Planner";
+import { Technician } from "../../types/Technician";
 
 interface props {
-  planner: Planner;
+  planner: Planner | Technician;
 }
 
 function PlannerProfile(props: props) {
